@@ -74,14 +74,12 @@
     <Compile Include="BS Layer\BLL_TaiKhoan.cs" />
     <Compile Include="DB Layer\DAL.cs" />
     <Compile Include="DB Layer\Query_DAL.cs" />
-    <Compile Include="DTO\BieuDo.cs" />
     <Compile Include="DTO\ChiTietHD.cs" />
     <Compile Include="DTO\HangHoa.cs" />
     <Compile Include="DTO\HoaDon.cs" />
     <Compile Include="DTO\KhachHang.cs" />
     <Compile Include="DTO\LoaiHang.cs" />
     <Compile Include="DTO\NhanVien.cs" />
-    <Compile Include="DTO\TaiKhoan.cs" />
     <Compile Include="frmReport.cs">
       <SubType>Form</SubType>
     </Compile>

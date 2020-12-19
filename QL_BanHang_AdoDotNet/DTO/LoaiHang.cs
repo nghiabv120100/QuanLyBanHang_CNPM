@@ -6,9 +6,11 @@ using System.Threading.Tasks;
 
 namespace QL_BanHang_AdoDotNet.DTO
 {
-    public class LoaiHang
+     public class LoaiHang
     {
         public string MaLoaiHang { get; set; }
         public string TenLoaiHang { get; set; }
+        public string HinhAnh { get; set; } 
+
     }
 }
