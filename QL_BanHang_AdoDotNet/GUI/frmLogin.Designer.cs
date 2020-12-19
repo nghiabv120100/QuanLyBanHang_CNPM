@@ -36,6 +36,7 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btnDangNhap = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
+            this.lblQuenMatKhau = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -94,10 +95,10 @@
             this.btnThoat.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnThoat.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnThoat.ForeColor = System.Drawing.Color.White;
-            this.btnThoat.Location = new System.Drawing.Point(200, 399);
+            this.btnThoat.Location = new System.Drawing.Point(197, 420);
             this.btnThoat.Margin = new System.Windows.Forms.Padding(4);
             this.btnThoat.Name = "btnThoat";
-            this.btnThoat.Size = new System.Drawing.Size(117, 39);
+            this.btnThoat.Size = new System.Drawing.Size(120, 39);
             this.btnThoat.TabIndex = 3;
             this.btnThoat.Text = "Thoát";
             this.btnThoat.UseVisualStyleBackColor = false;
@@ -122,10 +123,10 @@
             this.btnDangNhap.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDangNhap.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.btnDangNhap.ImageAlign = System.Drawing.ContentAlignment.TopRight;
-            this.btnDangNhap.Location = new System.Drawing.Point(53, 399);
+            this.btnDangNhap.Location = new System.Drawing.Point(53, 420);
             this.btnDangNhap.Margin = new System.Windows.Forms.Padding(4);
             this.btnDangNhap.Name = "btnDangNhap";
-            this.btnDangNhap.Size = new System.Drawing.Size(116, 39);
+            this.btnDangNhap.Size = new System.Drawing.Size(118, 39);
             this.btnDangNhap.TabIndex = 2;
             this.btnDangNhap.Text = "Đăng Nhập";
             this.btnDangNhap.UseVisualStyleBackColor = false;
@@ -143,12 +144,23 @@
             this.label3.TabIndex = 0;
             this.label3.Text = "Login Here";
             // 
+            // lblQuenMatKhau
+            // 
+            this.lblQuenMatKhau.AutoSize = true;
+            this.lblQuenMatKhau.ForeColor = System.Drawing.SystemColors.Highlight;
+            this.lblQuenMatKhau.Location = new System.Drawing.Point(49, 369);
+            this.lblQuenMatKhau.Name = "lblQuenMatKhau";
+            this.lblQuenMatKhau.Size = new System.Drawing.Size(122, 20);
+            this.lblQuenMatKhau.TabIndex = 4;
+            this.lblQuenMatKhau.Text = "Quên mật khẩu";
+            // 
             // frmLogin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Black;
-            this.ClientSize = new System.Drawing.Size(365, 515);
+            this.ClientSize = new System.Drawing.Size(365, 521);
+            this.Controls.Add(this.lblQuenMatKhau);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.btnThoat);
             this.Controls.Add(this.btnDangNhap);
@@ -179,5 +191,6 @@
         private System.Windows.Forms.Button btnThoat;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label lblQuenMatKhau;
     }
 }

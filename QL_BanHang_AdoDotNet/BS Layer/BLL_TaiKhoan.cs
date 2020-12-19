@@ -10,6 +10,13 @@ namespace QL_BanHang_AdoDotNet.BS_Layer
 {
     public static class BLL_TaiKhoan
     {
+        public static int findRole(string username)
+        {
+            string sql = $"select LoaiTaiKhoan from dbo.TaiKhoan " +
+               $"Where TenDangNhap=N'{username.Trim()}' ";
+            int Quyen=Query_DAL.findRole(sql);
+            return Quyen;
+        }
         public static bool CheckTaiKhoan(TaiKhoan tk)
         {
             string sql = $"select * from dbo.TaiKhoan " +
