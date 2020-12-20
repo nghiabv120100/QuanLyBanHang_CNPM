@@ -10,5 +10,7 @@ namespace QL_BanHang_AdoDotNet.DTO
     {
         public string MaLoaiHang { get; set; }
         public string TenLoaiHang { get; set; }
+        public string HinhAnh { get; set; }
+
     }
 }

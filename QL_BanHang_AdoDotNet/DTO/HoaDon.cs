@@ -12,6 +12,6 @@ namespace QL_BanHang_AdoDotNet.DTO
         public string MaNhanVien { get; set; }
         public string MaKhachHang { get; set; }
         public DateTime NgayBan { get; set; }
-        public int TongTien { get; set; }
+        public float TongTien { get; set; }
     }
 }
