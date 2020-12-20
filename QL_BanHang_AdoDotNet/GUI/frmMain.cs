@@ -14,7 +14,6 @@ namespace QL_BanHang_AdoDotNet.GUI
 {
     public partial class frmMain : Form
     {
-        public string username { get; set; }
         public frmMain()
         {
             InitializeComponent();
@@ -68,7 +67,7 @@ namespace QL_BanHang_AdoDotNet.GUI
         }
         private void frmMain_Load(object sender, EventArgs e)
         {
-            Cons.Quyen = BLL_TaiKhoan.findRole(username);
+            Cons.Quyen = BLL_TaiKhoan.findRole(Cons.username);
         }
 
         private void frmMain_FormClosing(object sender, FormClosingEventArgs e)

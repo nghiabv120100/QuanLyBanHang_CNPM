@@ -15,6 +15,18 @@ namespace QL_BanHang_AdoDotNet.GUI
 {
     public partial class frmDMLoaiHang : Form
     {
+        private void KhoaButton()
+        {
+            if (Cons.Quyen == 0)
+            {
+                btnBoQua.Enabled = false;
+                btnLuu.Enabled = false;
+                btnThem.Enabled = false;
+                btnXoa.Enabled = false;
+                btnSua.Enabled = false;
+                btnBoQua.Enabled = false;
+            }
+        }
         public frmDMLoaiHang()
         {
             InitializeComponent();
@@ -26,6 +38,7 @@ namespace QL_BanHang_AdoDotNet.GUI
             dgvLoaiHang.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
             dgvLoaiHang.Columns[0].HeaderText = "Mã LH";
             dgvLoaiHang.Columns[1].HeaderText = "Tên loại hàng";
+            KhoaButton();
         }
         private void HienThiDanhSachLoaiHang()
         {
@@ -130,7 +143,7 @@ namespace QL_BanHang_AdoDotNet.GUI
         {
             if (dgvLoaiHang.Rows.Count < 1)
                 return;
-            if (btnThem.Enabled == false)
+            if (btnThem.Enabled == false && Cons.Quyen==1)
             {
                 MessageBox.Show("Đang ở chế độ thêm mới!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 txtMaLoaiHang.Focus();
@@ -147,6 +160,8 @@ namespace QL_BanHang_AdoDotNet.GUI
             txtTenLoaiHang.Text = dgvLoaiHang[1, indexRow].Value.ToString();           
             btnSua.Enabled = true;
             btnXoa.Enabled = true;
+
+            KhoaButton();
         }
     }
 }

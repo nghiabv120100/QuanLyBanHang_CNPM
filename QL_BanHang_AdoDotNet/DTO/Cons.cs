@@ -9,5 +9,6 @@ namespace QL_BanHang_AdoDotNet.DTO
     public static class Cons
     {
         public static int Quyen = -1;
+        public static string username;
     }
 }

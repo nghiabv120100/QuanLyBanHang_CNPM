@@ -21,6 +21,18 @@ namespace QL_BanHang_AdoDotNet.GUI
         }
         List<HangHoa> dsHH = new List<HangHoa>();
         List<LoaiHang> dsLH = new List<LoaiHang>();
+
+        private void KhoaButton()
+        {
+            btnXoa.Enabled = false;
+            btnLuu.Enabled = false;
+            btnSua.Enabled = false;
+            btnThem.Enabled = false;
+            btnTimKiem.Enabled = false;
+            btnBoQua.Enabled = false;
+            btnOpen.Enabled = false;
+            btnHienThiDS.Enabled = false;
+        }
         private void frmDMHangHoa_Load(object sender, EventArgs e)
         {
             btnXoa.Enabled = false;
@@ -41,6 +53,12 @@ namespace QL_BanHang_AdoDotNet.GUI
             dgvHangHoa.Columns[8].HeaderText = "Xuất xứ";
             dgvHangHoa.Columns[9].HeaderText = "Loại hàng";
             dgvHangHoa.Columns[5].Visible = false;
+
+
+            if (Cons.Quyen == 0)
+            {
+                KhoaButton();
+            }
         }
         private void HienThiDanhSachHangHoa()
         {
@@ -169,7 +187,7 @@ namespace QL_BanHang_AdoDotNet.GUI
             if (dgvHangHoa.Rows.Count < 1)
                 return;
 
-            if (btnThem.Enabled == false)
+            if (btnThem.Enabled == false && Cons.Quyen==1)
             {
                 MessageBox.Show("Đang ở chế độ thêm mới!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 txtMaHang.Focus();
@@ -203,8 +221,11 @@ namespace QL_BanHang_AdoDotNet.GUI
             {
 
             }
-           
 
+            if (Cons.Quyen == 0)
+            {
+                KhoaButton();
+            }
         }
 
         private void btnXoa_Click(object sender, EventArgs e)

@@ -12,5 +12,7 @@ namespace QL_BanHang_AdoDotNet.DTO
         public string MatKhau { get; set; }
         public int LoaiTaiKhoan { get; set; }
 
+        public string MaNV { get; set; }
+
     }
 }

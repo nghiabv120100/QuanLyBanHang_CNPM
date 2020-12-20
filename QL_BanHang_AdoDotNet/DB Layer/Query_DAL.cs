@@ -397,6 +397,34 @@ namespace QL_BanHang_AdoDotNet.DB_Layer
             }
 
         }
+        public static NhanVien findEmployeeByUsername(string sql)
+        {
+            try
+            {
+                NhanVien nv = new NhanVien();
+                OpenConnection();
+                SqlCommand command = new SqlCommand();
+                command.CommandType = CommandType.Text;
+                command.CommandText = sql;
+                command.Connection = conn;
+                SqlDataReader reader = command.ExecuteReader();
+                while (reader.Read())
+                {
+                    
+                    nv.MaNhanVien = reader.GetString(0);
+                    nv.TenNhanVien = reader.GetString(1);
+
+                }
+                reader.Close();
+                return nv;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+                return null;
+            }
+
+        }
 
     }
 }

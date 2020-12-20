@@ -18,7 +18,18 @@ namespace QL_BanHang_AdoDotNet.GUI
         {
             InitializeComponent();
         }
-
+        private void KhoaButton()
+        {
+            if (Cons.Quyen == 0)
+            {
+                btnBoQua.Enabled = false;
+                btnLuu.Enabled = false;
+                btnThem.Enabled = false;
+                btnXoa.Enabled = false;
+                btnSua.Enabled = false;
+                btnBoQua.Enabled = false;
+            }
+        }
         private void frmDMNhanVien_Load(object sender, EventArgs e)
         {
             btnXoa.Enabled = false;
@@ -41,15 +52,7 @@ namespace QL_BanHang_AdoDotNet.GUI
             dgvNhanVien.Columns[7].HeaderText = "Lương";
 
             //Nhân viên không thể thao tác
-            if (Cons.Quyen == 0)
-            {
-                btnBoQua.Enabled = false;
-                btnLuu.Enabled = false;
-                btnThem.Enabled = false;
-                btnXoa.Enabled = false;
-                btnSua.Enabled = false;
-                btnBoQua.Enabled = false;
-            }
+            KhoaButton();
         }
         private void HienThiDanhSachNhanVien()
         {
@@ -86,7 +89,7 @@ namespace QL_BanHang_AdoDotNet.GUI
         {
             if (dgvNhanVien.Rows.Count < 1)
                 return;
-            if (btnThem.Enabled == false)
+            if (btnThem.Enabled == false && Cons.Quyen==1)
             {
                 MessageBox.Show("Đang ở chế độ thêm mới!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 txtMaNhanVien.Focus();
@@ -115,6 +118,11 @@ namespace QL_BanHang_AdoDotNet.GUI
             else chkNu.Checked = true;
             btnSua.Enabled = true;
             btnXoa.Enabled = true;
+            // Phân quyền
+            if (Cons.Quyen == 0)
+            {
+                KhoaButton();
+            }
         }
 
         private void btnBoQua_Click(object sender, EventArgs e)

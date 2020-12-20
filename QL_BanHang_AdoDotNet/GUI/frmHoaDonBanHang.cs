@@ -89,10 +89,8 @@ namespace QL_BanHang_AdoDotNet.GUI
             cmbMaNhanVien.Items.Clear();
             cmbMaKhach.Items.Clear();
             cmbMaHang.Items.Clear();
-            foreach (NhanVien nv in dsNV)
-            {
-                cmbMaNhanVien.Items.Add(nv.MaNhanVien);              
-            }
+            cmbMaNhanVien.Items.Add(BLL_NhanVien.findEmployeeByUsername(Cons.username).MaNhanVien);
+            cmbMaNhanVien.SelectedIndex = 0;
             foreach (KhachHang kh in dsKH)
             {
                 cmbMaKhach.Items.Add(kh.MaKhachHang);

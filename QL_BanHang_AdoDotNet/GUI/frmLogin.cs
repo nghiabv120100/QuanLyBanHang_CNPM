@@ -29,7 +29,7 @@ namespace QL_BanHang_AdoDotNet.GUI
             {      
                 this.Hide();
                 frmMain frm = new frmMain();
-                frm.username = tk.TenTaiKhoan;
+                Cons.username = tk.TenTaiKhoan;
                 frm.Show();
             }
             else

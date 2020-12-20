@@ -59,5 +59,11 @@ namespace QL_BanHang_AdoDotNet.BS_Layer
                 $"Where MaNhanVien='{MaNhanVien}'";
             return Query_DAL.DeleteData(sql);
         }
+        public static NhanVien findEmployeeByUsername(string username)
+        {
+            string sql = $"Select NhanVien.* from dbo.NhanVien, dbo.TaiKhoan " +
+                $"Where TenDangNhap='{username}' and NhanVien.MaNhanVien=TaiKhoan.MaNV";
+            return Query_DAL.findEmployeeByUsername(sql);
+        }
     }
 }
