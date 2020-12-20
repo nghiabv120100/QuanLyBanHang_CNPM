@@ -1,4 +1,6 @@
-﻿using System;
+﻿using QL_BanHang_AdoDotNet.BS_Layer;
+using QL_BanHang_AdoDotNet.DTO;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,6 +14,7 @@ namespace QL_BanHang_AdoDotNet.GUI
 {
     public partial class frmMain : Form
     {
+        public string username { get; set; }
         public frmMain()
         {
             InitializeComponent();
@@ -35,6 +38,7 @@ namespace QL_BanHang_AdoDotNet.GUI
 
         private void btnNhanVien_Click(object sender, EventArgs e)
         {
+
             frmDMNhanVien frm = new frmDMNhanVien();
             frm.MdiParent = this;
             frm.Dock = DockStyle.Fill;
@@ -43,6 +47,7 @@ namespace QL_BanHang_AdoDotNet.GUI
 
         private void btnLoaiHang_Click(object sender, EventArgs e)
         {
+
             frmDMLoaiHang frm = new frmDMLoaiHang();
             frm.MdiParent = this;
             frm.Dock = DockStyle.Fill;
@@ -63,7 +68,7 @@ namespace QL_BanHang_AdoDotNet.GUI
         }
         private void frmMain_Load(object sender, EventArgs e)
         {
-
+            Cons.Quyen = BLL_TaiKhoan.findRole(username);
         }
 
         private void frmMain_FormClosing(object sender, FormClosingEventArgs e)

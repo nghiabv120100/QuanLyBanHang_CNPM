@@ -76,6 +76,7 @@
     <Compile Include="DB Layer\Query_DAL.cs" />
     <Compile Include="DTO\BieuDo.cs" />
     <Compile Include="DTO\ChiTietHD.cs" />
+    <Compile Include="DTO\Cons.cs" />
     <Compile Include="DTO\HangHoa.cs" />
     <Compile Include="DTO\HoaDon.cs" />
     <Compile Include="DTO\KhachHang.cs" />

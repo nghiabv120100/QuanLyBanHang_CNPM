@@ -39,6 +39,17 @@ namespace QL_BanHang_AdoDotNet.GUI
             dgvNhanVien.Columns[5].HeaderText = "Ngày sinh";
             dgvNhanVien.Columns[6].HeaderText = "Chức vụ";
             dgvNhanVien.Columns[7].HeaderText = "Lương";
+
+            //Nhân viên không thể thao tác
+            if (Cons.Quyen == 0)
+            {
+                btnBoQua.Enabled = false;
+                btnLuu.Enabled = false;
+                btnThem.Enabled = false;
+                btnXoa.Enabled = false;
+                btnSua.Enabled = false;
+                btnBoQua.Enabled = false;
+            }
         }
         private void HienThiDanhSachNhanVien()
         {

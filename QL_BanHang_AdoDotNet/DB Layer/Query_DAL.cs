@@ -370,6 +370,33 @@ namespace QL_BanHang_AdoDotNet.DB_Layer
                 return -1;
             }
         }
+        public static int findRole(string sql)
+        {
+            try
+            {
+                int Quyen=-1;
+                OpenConnection();
+                SqlCommand command = new SqlCommand();
+                command.CommandType = CommandType.Text;
+                command.CommandText = sql;
+                command.Connection = conn;
+                SqlDataReader reader = command.ExecuteReader();
+                while (reader.Read())
+                {
+                    
+                    Quyen = reader.GetInt32(0);
+   
+                }
+                reader.Close();
+                return Quyen;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+                return -1;
+            }
+
+        }
 
     }
 }
