@@ -9,10 +9,11 @@ namespace QL_BanHang_AdoDotNet.DTO
     public class ChiTietHD
     {
         public string MaHoaDon { get; set; }
-        public string MaHangHoa { get; set; }
+        public string MaHang { get; set; }
         public int SoLuong { get; set; }
-        public float DonGia { get; set; }
-        public float ThanhTien { get; set; }
+        public string DonGia { get; set; }
+        public int GiamGia { get; set; }
+        public string ThanhTien { get; set; }
 
     }
 }

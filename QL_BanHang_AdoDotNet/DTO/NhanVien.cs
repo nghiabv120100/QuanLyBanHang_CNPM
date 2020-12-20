@@ -6,21 +6,15 @@ using System.Threading.Tasks;
 
 namespace QL_BanHang_AdoDotNet.DTO
 {
-    class NhanVien
+    public class NhanVien
     {
-        public string id { get; set; }
-        public string TaiKhoan { get; set; }
-        public string MatKhau { get; set; }
-        public string HoTen { get; set; }
-        public string SDT { get; set; }
+        public string MaNhanVien { get; set; }
+        public string TenNhanVien { get; set; }
         public string DiaChi { get; set; }
-        public float Luong { get; set; }
-        public string ChucVu { get; set; }
+        public string DienThoai { get; set; }
         public string GioiTinh { get; set; }
         public DateTime NgaySinh { get; set; }
-        public string Avatar { get; set; }
-        public int Quyen { get; set; }
-
-
+        public string ChucVu { get; set; }
+        public int Luong { get; set; }
     }
 }
