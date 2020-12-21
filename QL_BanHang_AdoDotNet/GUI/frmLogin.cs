@@ -30,6 +30,7 @@ namespace QL_BanHang_AdoDotNet.GUI
                 this.Hide();
                 frmMain frm = new frmMain();
                 Cons.username = tk.TenTaiKhoan;
+                frm.ten = txtTenDangNhap.Text;
                 frm.Show();
             }
             else

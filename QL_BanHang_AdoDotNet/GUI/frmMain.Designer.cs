@@ -35,10 +35,12 @@
             this.btnHoaDon = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
+            this.btnThoat = new System.Windows.Forms.Button();
             this.btnBieuDo = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.btnThoat = new System.Windows.Forms.Button();
+            this.btnTen = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
+            this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnHangHoa
@@ -172,6 +174,26 @@
             this.label1.TabIndex = 3;
             this.label1.Text = "Gaming\r\n  Gear";
             // 
+            // btnThoat
+            // 
+            this.btnThoat.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btnThoat.FlatAppearance.BorderSize = 0;
+            this.btnThoat.FlatAppearance.CheckedBackColor = System.Drawing.Color.Lime;
+            this.btnThoat.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.btnThoat.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Maroon;
+            this.btnThoat.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnThoat.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnThoat.ForeColor = System.Drawing.Color.White;
+            this.btnThoat.Location = new System.Drawing.Point(4, 647);
+            this.btnThoat.Margin = new System.Windows.Forms.Padding(4);
+            this.btnThoat.Name = "btnThoat";
+            this.btnThoat.Size = new System.Drawing.Size(262, 64);
+            this.btnThoat.TabIndex = 2;
+            this.btnThoat.Text = "Thoát";
+            this.btnThoat.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnThoat.UseVisualStyleBackColor = false;
+            this.btnThoat.Click += new System.EventHandler(this.btnThoat_Click);
+            // 
             // btnBieuDo
             // 
             this.btnBieuDo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
@@ -197,6 +219,7 @@
             this.panel2.BackColor = System.Drawing.Color.Red;
             this.panel2.BackgroundImage = global::QL_BanHang_AdoDotNet.Properties.Resources.banner_gear_giảm_giá;
             this.panel2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.panel2.Controls.Add(this.btnTen);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel2.Location = new System.Drawing.Point(270, 0);
             this.panel2.Margin = new System.Windows.Forms.Padding(4);
@@ -204,25 +227,16 @@
             this.panel2.Size = new System.Drawing.Size(1404, 186);
             this.panel2.TabIndex = 3;
             // 
-            // btnThoat
+            // btnTen
             // 
-            this.btnThoat.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.btnThoat.FlatAppearance.BorderSize = 0;
-            this.btnThoat.FlatAppearance.CheckedBackColor = System.Drawing.Color.Lime;
-            this.btnThoat.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
-            this.btnThoat.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Maroon;
-            this.btnThoat.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnThoat.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnThoat.ForeColor = System.Drawing.Color.White;
-            this.btnThoat.Location = new System.Drawing.Point(4, 647);
-            this.btnThoat.Margin = new System.Windows.Forms.Padding(4);
-            this.btnThoat.Name = "btnThoat";
-            this.btnThoat.Size = new System.Drawing.Size(262, 64);
-            this.btnThoat.TabIndex = 2;
-            this.btnThoat.Text = "Thoát";
-            this.btnThoat.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnThoat.UseVisualStyleBackColor = false;
-            this.btnThoat.Click += new System.EventHandler(this.btnThoat_Click);
+            this.btnTen.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnTen.Location = new System.Drawing.Point(1072, 58);
+            this.btnTen.Name = "btnTen";
+            this.btnTen.Size = new System.Drawing.Size(172, 56);
+            this.btnTen.TabIndex = 0;
+            this.btnTen.Text = "Human";
+            this.btnTen.UseVisualStyleBackColor = true;
+            this.btnTen.Click += new System.EventHandler(this.btnTen_Click);
             // 
             // frmMain
             // 
@@ -243,6 +257,7 @@
             this.Load += new System.EventHandler(this.frmMain_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            this.panel2.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -259,5 +274,6 @@
         private System.Windows.Forms.Button btnBieuDo;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btnThoat;
+        private System.Windows.Forms.Button btnTen;
     }
 }

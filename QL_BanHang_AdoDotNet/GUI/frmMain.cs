@@ -14,6 +14,7 @@ namespace QL_BanHang_AdoDotNet.GUI
 {
     public partial class frmMain : Form
     {
+        public string ten = "";
         public frmMain()
         {
             InitializeComponent();
@@ -68,6 +69,9 @@ namespace QL_BanHang_AdoDotNet.GUI
         private void frmMain_Load(object sender, EventArgs e)
         {
             Cons.Quyen = BLL_TaiKhoan.findRole(Cons.username);
+
+
+            this.btnTen.Text = ten;
         }
 
         private void frmMain_FormClosing(object sender, FormClosingEventArgs e)
@@ -81,6 +85,13 @@ namespace QL_BanHang_AdoDotNet.GUI
             if (dlr == DialogResult.Cancel || dlr == DialogResult.No)
                 return;
             Application.Exit();
+        }
+
+        private void btnTen_Click(object sender, EventArgs e)
+        {
+            ThongTinTaiKhoan frm = new ThongTinTaiKhoan();
+            frm.StartPosition = FormStartPosition.CenterScreen;
+            frm.Show();
         }
     }
 }
