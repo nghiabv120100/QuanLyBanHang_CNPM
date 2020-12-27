@@ -23,5 +23,11 @@ namespace QL_BanHang_AdoDotNet.BS_Layer
                 $"Where TenDangNhap=N'{tk.TenTaiKhoan.Trim()}' and MatKhau=N'{tk.MatKhau.Trim()}'";
             return Query_DAL.KiemTraTaiKhoan(sql);
         }
+        public static bool CheckError(TaiKhoan tk)
+        {
+            string sql = $"select * from dbo.TaiKhoan " +
+                $"Where TenDangNhap=N'{tk.TenTaiKhoan.Trim()}'";
+            return Query_DAL.KiemTraTaiKhoan(sql);
+        }
     }
 }

@@ -25,6 +25,7 @@ namespace QL_BanHang_AdoDotNet.GUI
             tk.TenTaiKhoan = txtTenDangNhap.Text;
             tk.MatKhau = txtMatKhau.Text;
             bool res = BLL_TaiKhoan.CheckTaiKhoan(tk);
+            bool err = BLL_TaiKhoan.CheckError(tk);
             if (res)
             {      
                 this.Hide();
@@ -34,7 +35,18 @@ namespace QL_BanHang_AdoDotNet.GUI
             }
             else
             {
-                MessageBox.Show("Sai Tên Đăng Nhập Hoặc Mật Khẩu");
+               if(string.IsNullOrEmpty(tk.TenTaiKhoan) || string.IsNullOrEmpty(tk.MatKhau))
+                {
+                    MessageBox.Show("Chưa nhập kìa bạn !", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }  
+               else if(err)
+                {
+                    MessageBox.Show("Sai mật khẩu !", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                else
+                {
+                    MessageBox.Show("Sai tên đăng nhập !", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
             
         }
