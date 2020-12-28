@@ -91,7 +91,9 @@ namespace QL_BanHang_AdoDotNet.GUI
             cmbMaLoaiHang.SelectedIndex = -1;
             picAnh.Image = null;
             txtPath.Text = "";
-            txtMaHang.Focus();
+            txtMaHang.Text = "MH" + (dgvHangHoa.Rows.Count + 1).ToString();
+            txtMaHang.Enabled = false;
+            txtTenHang.Focus();
         }
         private void ResetValues()
         {

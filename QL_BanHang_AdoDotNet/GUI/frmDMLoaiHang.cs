@@ -77,8 +77,9 @@ namespace QL_BanHang_AdoDotNet.GUI
             btnLuu.Enabled = true;
             btnThem.Enabled = false;
             ResetValues();
-            txtMaLoaiHang.Enabled = true;
-            txtMaLoaiHang.Focus();
+            txtMaLoaiHang.Text = "LH" + (dgvLoaiHang.Rows.Count + 1).ToString();
+            txtMaLoaiHang.Enabled = false;
+            txtTenLoaiHang.Focus();
         }
 
         private void btnLuu_Click(object sender, EventArgs e)

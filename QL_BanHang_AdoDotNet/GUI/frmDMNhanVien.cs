@@ -81,8 +81,10 @@ namespace QL_BanHang_AdoDotNet.GUI
             btnLuu.Enabled = true;
             btnThem.Enabled = false;
             ResetValues();
-            txtMaNhanVien.Enabled = true;
-            txtMaNhanVien.Focus();
+            txtMaNhanVien.Text = "NV" + (dgvNhanVien.Rows.Count + 1).ToString();
+            txtMaNhanVien.Enabled = false;
+            txtTenNhanVien.Focus();
+
         }
 
         private void dgvNhanVien_Click(object sender, EventArgs e)

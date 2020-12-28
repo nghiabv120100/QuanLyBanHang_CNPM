@@ -114,8 +114,9 @@ namespace QL_BanHang_AdoDotNet.GUI
             btnLuu.Enabled = true;
             btnThem.Enabled = false;
             ResetValues();
-            txtMaKhachHang.Enabled = true;
-            txtMaKhachHang.Focus();
+            txtMaKhachHang.Text = "KH" + (dgvKhachHang.Rows.Count + 1).ToString();
+            txtMaKhachHang.Enabled = false;
+            txtTenKhachHang.Focus();
         }
 
         private void btnLuu_Click(object sender, EventArgs e)
