@@ -10,5 +10,8 @@ namespace QL_BanHang_AdoDotNet.DTO
     {
         public static int Quyen = -1;
         public static string username;
+        public static string maKH;
+        public static string maHangHoa;
+        public static bool flag = false;  // Kiểm tra xem có chọn hay không
     }
 }

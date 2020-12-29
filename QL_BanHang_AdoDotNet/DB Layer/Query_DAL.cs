@@ -413,7 +413,7 @@ namespace QL_BanHang_AdoDotNet.DB_Layer
                     
                     nv.MaNhanVien = reader.GetString(0);
                     nv.TenNhanVien = reader.GetString(1);
-
+                    nv.ChucVu = reader.GetString(5);
                 }
                 reader.Close();
                 return nv;

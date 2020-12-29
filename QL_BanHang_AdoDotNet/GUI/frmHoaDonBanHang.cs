@@ -14,9 +14,9 @@ using QL_BanHang_AdoDotNet.BS_Layer;
 
 namespace QL_BanHang_AdoDotNet.GUI
 {
-    
     public partial class frmHoaDonBanHang : Form
     {
+        
         public frmHoaDonBanHang()
         {
             InitializeComponent();
@@ -118,9 +118,9 @@ namespace QL_BanHang_AdoDotNet.GUI
                 }
             }
         }
-
-        private void cmbMaKhach_SelectedIndexChanged(object sender, EventArgs e)
+        public void cmbMaKhach_SelectedIndexChanged(object sender, EventArgs e)
         {
+
             foreach (KhachHang kh in dsKH)
             {
                 if (kh.MaKhachHang.Trim() == cmbMaKhach.SelectedItem.ToString().Trim())
@@ -129,7 +129,8 @@ namespace QL_BanHang_AdoDotNet.GUI
                     txtDiachi.Text = kh.DiaChi;
                     mtbDienThoai.Text = kh.DienThoai;
                 }
-            }
+            } 
+            
         }
         private void cmbMaHang_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -140,7 +141,7 @@ namespace QL_BanHang_AdoDotNet.GUI
                     txtTenhang.Text = hh.TenHang;
                     txtDonGiaBan.Text = hh.DonGiaBan;
                 }
-            }
+            }                 
             txtSoluong.Text = "1";
             txtGiamgia.Text = "0";
             //Hiển thị giá tiền
@@ -451,19 +452,56 @@ namespace QL_BanHang_AdoDotNet.GUI
 
         #endregion
 
+        private void cmbMaKhachHangChanged(object sender, EventArgs e)
+        {
+            if (Cons.flag == false)
+                return;
+            foreach (KhachHang kh in dsKH)
+            {
+                if (kh.MaKhachHang.Trim() == Cons.maKH.Trim())
+                {
+                    cmbMaKhach.Text = kh.MaKhachHang.Trim();
+                    txtTenKhachHang.Text = kh.TenKhachHang;
+                    txtDiachi.Text = kh.DiaChi;
+                    mtbDienThoai.Text = kh.DienThoai;
+                }
+            }
+        }
         private void btnThemKH_Click(object sender, EventArgs e)
         {
-            frmDMKhachHang frm = new frmDMKhachHang();
+            Cons.flag = false;
+            frmDMThemKhachHang frm = new frmDMThemKhachHang();
             frm.StartPosition = FormStartPosition.CenterScreen;
             frm.Show();
-            
-         
+            frm.FormClosed += cmbMaKhachHangChanged;
         }
 
         private void cmbMaKhach_MouseClick(object sender, MouseEventArgs e)
         {
             dsKH = BLL_KhachHang.LayToanBoKhachHang();
             HienThiLenCombobox();
+        }
+        private void cmbMaHangChanged(object sender, EventArgs e)
+        {
+            if (Cons.flag == false)
+                return;
+            foreach (HangHoa hh in dsHH)
+            {
+                if (hh.MaHang.Trim() == Cons.maHangHoa.Trim())
+                {
+                    cmbMaHang.Text = Cons.maHangHoa;
+                    txtTenhang.Text = hh.TenHang;
+                    txtDonGiaBan.Text = hh.DonGiaBan;
+                }
+            }
+        }
+        private void btnMo_Click(object sender, EventArgs e)
+        {
+            Cons.flag = false;
+            frmDMThemHangHoa frm = new frmDMThemHangHoa();
+            frm.Show();
+            frm.FormClosed += cmbMaHangChanged;
+            //frm.FormClosed += cmbMaHang_SelectedIndexChanged;
         }
     }
 }

@@ -74,6 +74,7 @@
             this.cmbMaKhach = new System.Windows.Forms.ComboBox();
             this.label9 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
+            this.btnMo = new System.Windows.Forms.Button();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvHDBanHang)).BeginInit();
             this.panel2.SuspendLayout();
@@ -82,6 +83,7 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.btnMo);
             this.groupBox2.Controls.Add(this.btnBoQua);
             this.groupBox2.Controls.Add(this.label19);
             this.groupBox2.Controls.Add(this.button5);
@@ -258,7 +260,7 @@
             // 
             this.cmbMaHang.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbMaHang.FormattingEnabled = true;
-            this.cmbMaHang.Location = new System.Drawing.Point(161, 35);
+            this.cmbMaHang.Location = new System.Drawing.Point(140, 35);
             this.cmbMaHang.Name = "cmbMaHang";
             this.cmbMaHang.Size = new System.Drawing.Size(158, 28);
             this.cmbMaHang.TabIndex = 2;
@@ -267,7 +269,7 @@
             // txtThanhtien
             // 
             this.txtThanhtien.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtThanhtien.Location = new System.Drawing.Point(161, 234);
+            this.txtThanhtien.Location = new System.Drawing.Point(140, 234);
             this.txtThanhtien.Name = "txtThanhtien";
             this.txtThanhtien.Size = new System.Drawing.Size(158, 26);
             this.txtThanhtien.TabIndex = 1;
@@ -276,7 +278,7 @@
             // 
             this.label17.AutoSize = true;
             this.label17.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label17.Location = new System.Drawing.Point(39, 239);
+            this.label17.Location = new System.Drawing.Point(18, 239);
             this.label17.Name = "label17";
             this.label17.Size = new System.Drawing.Size(87, 20);
             this.label17.TabIndex = 0;
@@ -285,7 +287,7 @@
             // txtDonGiaBan
             // 
             this.txtDonGiaBan.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtDonGiaBan.Location = new System.Drawing.Point(161, 194);
+            this.txtDonGiaBan.Location = new System.Drawing.Point(140, 194);
             this.txtDonGiaBan.Name = "txtDonGiaBan";
             this.txtDonGiaBan.Size = new System.Drawing.Size(158, 26);
             this.txtDonGiaBan.TabIndex = 1;
@@ -293,7 +295,7 @@
             // txtGiamgia
             // 
             this.txtGiamgia.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtGiamgia.Location = new System.Drawing.Point(161, 155);
+            this.txtGiamgia.Location = new System.Drawing.Point(140, 155);
             this.txtGiamgia.Name = "txtGiamgia";
             this.txtGiamgia.Size = new System.Drawing.Size(158, 26);
             this.txtGiamgia.TabIndex = 1;
@@ -303,7 +305,7 @@
             // 
             this.label14.AutoSize = true;
             this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label14.Location = new System.Drawing.Point(39, 199);
+            this.label14.Location = new System.Drawing.Point(18, 199);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(66, 20);
             this.label14.TabIndex = 0;
@@ -313,7 +315,7 @@
             // 
             this.label16.AutoSize = true;
             this.label16.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label16.Location = new System.Drawing.Point(39, 160);
+            this.label16.Location = new System.Drawing.Point(18, 160);
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(101, 20);
             this.label16.TabIndex = 0;
@@ -322,7 +324,7 @@
             // txtTenhang
             // 
             this.txtTenhang.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTenhang.Location = new System.Drawing.Point(161, 115);
+            this.txtTenhang.Location = new System.Drawing.Point(140, 115);
             this.txtTenhang.Name = "txtTenhang";
             this.txtTenhang.Size = new System.Drawing.Size(158, 26);
             this.txtTenhang.TabIndex = 1;
@@ -330,7 +332,7 @@
             // txtSoluong
             // 
             this.txtSoluong.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtSoluong.Location = new System.Drawing.Point(161, 77);
+            this.txtSoluong.Location = new System.Drawing.Point(140, 77);
             this.txtSoluong.Name = "txtSoluong";
             this.txtSoluong.Size = new System.Drawing.Size(158, 26);
             this.txtSoluong.TabIndex = 1;
@@ -340,7 +342,7 @@
             // 
             this.label13.AutoSize = true;
             this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.Location = new System.Drawing.Point(39, 120);
+            this.label13.Location = new System.Drawing.Point(18, 120);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(83, 20);
             this.label13.TabIndex = 0;
@@ -350,7 +352,7 @@
             // 
             this.label15.AutoSize = true;
             this.label15.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label15.Location = new System.Drawing.Point(39, 78);
+            this.label15.Location = new System.Drawing.Point(18, 78);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(74, 20);
             this.label15.TabIndex = 0;
@@ -360,7 +362,7 @@
             // 
             this.label12.AutoSize = true;
             this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.Location = new System.Drawing.Point(39, 38);
+            this.label12.Location = new System.Drawing.Point(18, 38);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(78, 20);
             this.label12.TabIndex = 0;
@@ -574,6 +576,16 @@
             this.label8.TabIndex = 0;
             this.label8.Text = "Mã khách hàng";
             // 
+            // btnMo
+            // 
+            this.btnMo.Location = new System.Drawing.Point(304, 37);
+            this.btnMo.Name = "btnMo";
+            this.btnMo.Size = new System.Drawing.Size(45, 26);
+            this.btnMo.TabIndex = 12;
+            this.btnMo.Text = "Mở";
+            this.btnMo.UseVisualStyleBackColor = true;
+            this.btnMo.Click += new System.EventHandler(this.btnMo_Click);
+            // 
             // frmHoaDonBanHang
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -645,5 +657,6 @@
         private System.Windows.Forms.ComboBox cmbMahoadon;
         private System.Windows.Forms.Button btnBoQua;
         private System.Windows.Forms.Button btnThemKH;
+        private System.Windows.Forms.Button btnMo;
     }
 }

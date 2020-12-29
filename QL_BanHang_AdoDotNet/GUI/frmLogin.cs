@@ -27,11 +27,12 @@ namespace QL_BanHang_AdoDotNet.GUI
             bool res = BLL_TaiKhoan.CheckTaiKhoan(tk);
             bool err = BLL_TaiKhoan.CheckError(tk);
             if (res)
-            {      
+            {
                 this.Hide();
                 frmMain frm = new frmMain();
                 Cons.username = tk.TenTaiKhoan;
                 frm.Show();
+                
             }
             else
             {

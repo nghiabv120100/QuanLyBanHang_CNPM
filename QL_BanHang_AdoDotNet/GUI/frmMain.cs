@@ -67,7 +67,12 @@ namespace QL_BanHang_AdoDotNet.GUI
         }
         private void frmMain_Load(object sender, EventArgs e)
         {
+            NhanVien nv = new NhanVien();
             Cons.Quyen = BLL_TaiKhoan.findRole(Cons.username);
+            nv = BLL_NhanVien.findEmployeeByUsername(Cons.username);
+            lblTenNhanVien.Text = nv.TenNhanVien;
+            lblChucVu.Text = nv.ChucVu;
+            
         }
 
         private void frmMain_FormClosing(object sender, FormClosingEventArgs e)
@@ -81,6 +86,14 @@ namespace QL_BanHang_AdoDotNet.GUI
             if (dlr == DialogResult.Cancel || dlr == DialogResult.No)
                 return;
             Application.Exit();
+        }
+
+        private void lblDangXuat_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            frmLogin frm = new frmLogin();
+            frm.Show();
+            
         }
     }
 }

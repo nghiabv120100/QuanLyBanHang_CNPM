@@ -398,3 +398,5 @@ E:\Information Technology\LearnC#\Công Nghệ Phần Mềm\Đồ Án CNPM\QLBan
 E:\Information Technology\LearnC#\Công Nghệ Phần Mềm\Đồ Án CNPM\QLBanHang_CNPM_2\QuanLyBanHang_CNPM\QL_BanHang_AdoDotNet\obj\Debug\QL_BanHang_AdoDotNet.csproj.CopyComplete
 E:\Information Technology\LearnC#\Công Nghệ Phần Mềm\Đồ Án CNPM\QLBanHang_CNPM_2\QuanLyBanHang_CNPM\QL_BanHang_AdoDotNet\obj\Debug\QL_BanHang_AdoDotNet.exe
 E:\Information Technology\LearnC#\Công Nghệ Phần Mềm\Đồ Án CNPM\QLBanHang_CNPM_2\QuanLyBanHang_CNPM\QL_BanHang_AdoDotNet\obj\Debug\QL_BanHang_AdoDotNet.pdb
+E:\Information Technology\LearnC#\Công Nghệ Phần Mềm\Đồ Án CNPM\QLBanHang_CNPM_2\QuanLyBanHang_CNPM\QL_BanHang_AdoDotNet\obj\Debug\QL_BanHang_AdoDotNet.GUI.frmDMThemKhachHang.resources
+E:\Information Technology\LearnC#\Công Nghệ Phần Mềm\Đồ Án CNPM\QLBanHang_CNPM_2\QuanLyBanHang_CNPM\QL_BanHang_AdoDotNet\obj\Debug\QL_BanHang_AdoDotNet.GUI.frmDMThemHangHoa.resources

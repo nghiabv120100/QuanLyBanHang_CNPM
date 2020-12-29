@@ -95,11 +95,23 @@
     <Compile Include="GUI\frmBieuDo.Designer.cs">
       <DependentUpon>frmBieuDo.cs</DependentUpon>
     </Compile>
+    <Compile Include="GUI\frmDMThemHangHoa.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\frmDMThemHangHoa.Designer.cs">
+      <DependentUpon>frmDMThemHangHoa.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI\frmDMHangHoa.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="GUI\frmDMHangHoa.Designer.cs">
       <DependentUpon>frmDMHangHoa.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\frmDMThemKhachHang.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\frmDMThemKhachHang.Designer.cs">
+      <DependentUpon>frmDMThemKhachHang.cs</DependentUpon>
     </Compile>
     <Compile Include="GUI\frmDMKhachHang.cs">
       <SubType>Form</SubType>
@@ -155,8 +167,14 @@
     <EmbeddedResource Include="GUI\frmBieuDo.resx">
       <DependentUpon>frmBieuDo.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="GUI\frmDMThemHangHoa.resx">
+      <DependentUpon>frmDMThemHangHoa.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GUI\frmDMHangHoa.resx">
       <DependentUpon>frmDMHangHoa.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\frmDMThemKhachHang.resx">
+      <DependentUpon>frmDMThemKhachHang.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\frmDMKhachHang.resx">
       <DependentUpon>frmDMKhachHang.cs</DependentUpon>
