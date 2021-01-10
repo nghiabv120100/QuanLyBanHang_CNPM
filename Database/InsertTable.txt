@@ -1,0 +1,14 @@
+use QL_BanHang
+go
+create table NhaCungCap
+(
+	MaNCC int primary key IDENTITY(1,1),
+	TenNhaCungCap nvarchar(255),
+	DiaChi nvarchar(255),
+	SoDienThoai char(15),
+	Email nvarchar(255)
+)
+go
+alter table dbo.HangHoa
+add MaNCC int references dbo.NhaCungCap(MaNCC)
+

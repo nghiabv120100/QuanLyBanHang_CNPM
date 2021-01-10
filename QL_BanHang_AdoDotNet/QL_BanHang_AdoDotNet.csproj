@@ -70,6 +70,7 @@
     <Compile Include="BS Layer\BLL_HoaDonBanHang.cs" />
     <Compile Include="BS Layer\BLL_KhachHang.cs" />
     <Compile Include="BS Layer\BLL_LoaiHang.cs" />
+    <Compile Include="BS Layer\BLL_NhaCungCap.cs" />
     <Compile Include="BS Layer\BLL_NhanVien.cs" />
     <Compile Include="BS Layer\BLL_TaiKhoan.cs" />
     <Compile Include="DB Layer\DAL.cs" />
@@ -81,6 +82,7 @@
     <Compile Include="DTO\HoaDon.cs" />
     <Compile Include="DTO\KhachHang.cs" />
     <Compile Include="DTO\LoaiHang.cs" />
+    <Compile Include="DTO\NhaCungCap.cs" />
     <Compile Include="DTO\NhanVien.cs" />
     <Compile Include="DTO\TaiKhoan.cs" />
     <Compile Include="frmReport.cs">
@@ -94,6 +96,12 @@
     </Compile>
     <Compile Include="GUI\frmBieuDo.Designer.cs">
       <DependentUpon>frmBieuDo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\frmDMNhaCungCap.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\frmDMNhaCungCap.Designer.cs">
+      <DependentUpon>frmDMNhaCungCap.cs</DependentUpon>
     </Compile>
     <Compile Include="GUI\frmDMThemHangHoa.cs">
       <SubType>Form</SubType>
@@ -166,6 +174,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\frmBieuDo.resx">
       <DependentUpon>frmBieuDo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\frmDMNhaCungCap.resx">
+      <DependentUpon>frmDMNhaCungCap.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\frmDMThemHangHoa.resx">
       <DependentUpon>frmDMThemHangHoa.cs</DependentUpon>

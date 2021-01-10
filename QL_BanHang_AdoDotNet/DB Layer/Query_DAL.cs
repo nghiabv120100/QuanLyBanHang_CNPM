@@ -425,6 +425,40 @@ namespace QL_BanHang_AdoDotNet.DB_Layer
             }
 
         }
-
+        public static List<NhaCungCap> LayToanBoNhaCungCap()
+        {
+            try
+            {
+                List<NhaCungCap> dsNCC = new List<NhaCungCap>();
+                OpenConnection();
+                SqlCommand command = new SqlCommand();
+                command.CommandType = CommandType.Text;
+                command.CommandText = "Select * from dbo.NhaCungCap";
+                command.Connection = conn;
+                SqlDataReader reader = command.ExecuteReader();
+                while (reader.Read())
+                {
+                    int MaNhaCungCap = reader.GetInt32(0);
+                    string TenNhaCungCap = reader.GetString(1);
+                    string DiaChi = reader.GetString(2);
+                    string SoDienThoai = reader.GetString(3);
+                    string Email = reader.GetString(4);
+                    
+                    NhaCungCap NCC = new NhaCungCap();
+                    NCC.MaNhaCungCap = MaNhaCungCap;
+                    NCC.TenNhaCungCap = TenNhaCungCap;
+                    NCC.DiaChi = DiaChi;
+                    NCC.Email = Email;
+                    dsNCC.Add(NCC);
+                }
+                reader.Close();
+                return dsNCC;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+                return null;
+            }
+        }
     }
 }

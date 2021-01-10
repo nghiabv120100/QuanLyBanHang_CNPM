@@ -95,5 +95,13 @@ namespace QL_BanHang_AdoDotNet.GUI
             frm.Show();
             
         }
+
+        private void btnNhaCungCap_Click(object sender, EventArgs e)
+        {
+            frmDMNhaCungCap frm = new frmDMNhaCungCap();
+            frm.MdiParent = this;
+            frm.Dock = DockStyle.Fill;
+            frm.Show();
+        }
     }
 }
