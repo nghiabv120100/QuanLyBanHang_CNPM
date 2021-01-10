@@ -23,9 +23,17 @@ namespace QL_BanHang_AdoDotNet.BS_Layer
             string sql = "Select HangHoa.*,TenLoaiHang,TenNhaCungCap from dbo.HangHoa,LoaiHang,NhaCungCap where HangHoa.LoaiHang = LoaiHang.MaLoaiHang and HangHoa.MaNCC=NhaCungCap.MaNCC";
             return Query_DAL.GetDataToTable(sql);
         }
+        public static DataTable TimKiemHangHoa(string para)
+        {
+            string sql = "Select HangHoa.*,TenLoaiHang,TenNhaCungCap from dbo.HangHoa,LoaiHang,NhaCungCap where HangHoa.LoaiHang = LoaiHang.MaLoaiHang and HangHoa.MaNCC=NhaCungCap.MaNCC "
+                         + "and (TenLoaiHang LIKE '%" + para.Trim() + "%' or TenNhaCungCap LIKE '%" + para.Trim() + "%' or TenHang LIKE '%" + para.Trim() + "%' )";
+           
+            return Query_DAL.GetDataToTable(sql);
+        }
+
         public static DataTable FindHangHoa(HangHoa HH)
         {
-            string sql = "SELECT * from dbo.HangHoa WHERE 1=1";
+            string sql = "Select HangHoa.*,TenLoaiHang,TenNhaCungCap from dbo.HangHoa,LoaiHang,NhaCungCap where HangHoa.LoaiHang = LoaiHang.MaLoaiHang and HangHoa.MaNCC=NhaCungCap.MaNCC";
             if (HH.MaHang != "")
                 sql += " AND MaHang LIKE '%" + HH.MaHang.Trim() + "%'";
             if (HH.TenHang != "")
@@ -41,10 +49,10 @@ namespace QL_BanHang_AdoDotNet.BS_Layer
                 
 
             string sql = "Insert into dbo.HangHoa(MaHang, TenHang, SoLuong,  DonGiaNhap, DonGiaBan,  Anh , "
-                + "GhiChu ,ThoiGianBaoHanh, XuatXu , LoaiHang )"
+                + "GhiChu ,ThoiGianBaoHanh, XuatXu , LoaiHang, MaNCC )"
                 + "Values"
                 + $"('{HH.MaHang}',N'{HH.TenHang}',{HH.SoLuong},"
-                + $"'{HH.DonGiaNhap}','{HH.DonGiaBan}',N'{HH.Anh}',N'{HH.GhiChu }',{HH.ThoiGianBaoHanh},N'{HH.XuatXu}','{HH.LoaiHang}')";
+                + $"'{HH.DonGiaNhap}','{HH.DonGiaBan}',N'{HH.Anh}',N'{HH.GhiChu }',{HH.ThoiGianBaoHanh},N'{HH.XuatXu}','{HH.LoaiHang}',{HH.MaNCC})";
             return Query_DAL.InsertData(sql);
         }
         private static bool CheckKeyHH(string MaHangHoa)

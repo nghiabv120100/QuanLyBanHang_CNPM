@@ -34,7 +34,7 @@
             this.picAnh = new System.Windows.Forms.PictureBox();
             this.txtGhichu = new System.Windows.Forms.TextBox();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.cmbNhaCungCap = new System.Windows.Forms.ComboBox();
             this.label12 = new System.Windows.Forms.Label();
             this.txtThoiGianBaoHanh = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
@@ -127,7 +127,7 @@
             // panel2
             // 
             this.panel2.Controls.Add(this.btnOpen);
-            this.panel2.Controls.Add(this.comboBox1);
+            this.panel2.Controls.Add(this.cmbNhaCungCap);
             this.panel2.Controls.Add(this.label12);
             this.panel2.Controls.Add(this.txtThoiGianBaoHanh);
             this.panel2.Controls.Add(this.label11);
@@ -157,14 +157,14 @@
             this.panel2.Size = new System.Drawing.Size(1342, 269);
             this.panel2.TabIndex = 7;
             // 
-            // comboBox1
+            // cmbNhaCungCap
             // 
-            this.comboBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(163, 169);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(187, 28);
-            this.comboBox1.TabIndex = 14;
+            this.cmbNhaCungCap.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbNhaCungCap.FormattingEnabled = true;
+            this.cmbNhaCungCap.Location = new System.Drawing.Point(163, 169);
+            this.cmbNhaCungCap.Name = "cmbNhaCungCap";
+            this.cmbNhaCungCap.Size = new System.Drawing.Size(187, 28);
+            this.cmbNhaCungCap.TabIndex = 14;
             // 
             // label12
             // 
@@ -517,7 +517,7 @@
         private System.Windows.Forms.Button btnLuu;
         private System.Windows.Forms.Button btnSua;
         private System.Windows.Forms.Button btnXoa;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox cmbNhaCungCap;
         private System.Windows.Forms.Label label12;
     }
 }

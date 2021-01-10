@@ -22,6 +22,7 @@ namespace QL_BanHang_AdoDotNet.GUI
         DataTable dsHHHienThi;
         List<HangHoa> dsHH = new List<HangHoa>();
         List<LoaiHang> dsLH = new List<LoaiHang>();
+        List<NhaCungCap> dsNCC = new List<NhaCungCap>();
 
         private void KhoaButton()
         {
@@ -54,7 +55,8 @@ namespace QL_BanHang_AdoDotNet.GUI
             dgvHangHoa.Columns[8].HeaderText = "Xuất xứ";
             dgvHangHoa.Columns[9].HeaderText = "Loại hàng";
             dgvHangHoa.Columns[5].Visible = false;
-
+            dgvHangHoa.Columns[9].Visible = false;
+            dgvHangHoa.Columns[10].Visible = false;
 
             if (Cons.Quyen == 0)
             {
@@ -68,15 +70,24 @@ namespace QL_BanHang_AdoDotNet.GUI
             dgvHangHoa.DataSource = dsHHHienThi;
             dgvHangHoa.AllowUserToAddRows = false;
             dgvHangHoa.EditMode = DataGridViewEditMode.EditProgrammatically;
-
+            dgvHangHoa.Columns[5].Visible = false;
+            dgvHangHoa.Columns[9].Visible = false;
+            dgvHangHoa.Columns[10].Visible = false;
         }
         private void HienThiDanhSachLoaiHang()
         {
             dsLH = BLL_LoaiHang.LayToanBoLoaiHang();
+            dsNCC = BLL_NhaCungCap.LayToanBoNhaCungCap();
+
             cmbMaLoaiHang.DataSource = dsLH;
-            cmbMaLoaiHang.DisplayMember = "MaLoaiHang";
+            cmbMaLoaiHang.DisplayMember = "TenLoaiHang";
             cmbMaLoaiHang.ValueMember = "MaLoaiHang";
             cmbMaLoaiHang.SelectedIndex = -1;
+
+            cmbNhaCungCap.DataSource = dsNCC;
+            cmbNhaCungCap.DisplayMember = "TenNhaCungCap";
+            cmbNhaCungCap.ValueMember = "MaNhaCungCap";
+            cmbNhaCungCap.SelectedIndex = -1;
         }
         private void btnThem_Click(object sender, EventArgs e)
         {
@@ -102,6 +113,7 @@ namespace QL_BanHang_AdoDotNet.GUI
             txtMaHang.Text = "";
             txtTenHang.Text = "";
             cmbMaLoaiHang.SelectedIndex = -1;
+            cmbNhaCungCap.SelectedIndex = -1;
             txtSoluong.Text = "";
             txtDongianhap.Text = "";
             txtDongiaban.Text = "";
@@ -124,7 +136,9 @@ namespace QL_BanHang_AdoDotNet.GUI
             HH.ThoiGianBaoHanh = int.Parse(txtThoiGianBaoHanh.Text);
             HH.XuatXu = txtXuatXu.Text;
             HH.LoaiHang = cmbMaLoaiHang.SelectedValue.ToString();
+            HH.MaNCC= int.Parse(cmbNhaCungCap.SelectedValue.ToString()) ;
 
+            MessageBox.Show(cmbMaLoaiHang.SelectedValue.ToString());
             int res = BLL_HangHoa.InsertHangHoa(HH);
             if (res > 0)
             {
@@ -173,7 +187,8 @@ namespace QL_BanHang_AdoDotNet.GUI
             HH.GhiChu = txtGhichu.Text;
             HH.ThoiGianBaoHanh = int.Parse(txtThoiGianBaoHanh.Text);
             HH.XuatXu = txtXuatXu.Text;
-            HH.LoaiHang = cmbMaLoaiHang.Text;
+            HH.LoaiHang = cmbMaLoaiHang.SelectedValue.ToString();
+            HH.MaNCC = int.Parse(cmbNhaCungCap.SelectedValue.ToString());
             int res = BLL_HangHoa.UpdateHangHoa(HH);
             if (res >0)
             {
@@ -216,7 +231,8 @@ namespace QL_BanHang_AdoDotNet.GUI
             txtGhichu.Text=dgvHangHoa[6,indexRow].Value.ToString();
             txtThoiGianBaoHanh.Text=dgvHangHoa[7,indexRow].Value.ToString();
             txtXuatXu.Text=dgvHangHoa[8,indexRow].Value.ToString();
-            cmbMaLoaiHang.Text= dgvHangHoa[9, indexRow].Value.ToString();
+            cmbMaLoaiHang.Text= dgvHangHoa[11, indexRow].Value.ToString();
+            cmbNhaCungCap.Text= dgvHangHoa[12, indexRow].Value.ToString();
             try
             {
                 picAnh.Image = new Bitmap(Application.StartupPath + "\\Resources\\" + txtPath.Text);
@@ -258,16 +274,33 @@ namespace QL_BanHang_AdoDotNet.GUI
         private void btnTimKiem_Click(object sender, EventArgs e)
         {
             string sql;
-            if ((txtMaHang.Text == "") && (txtTenHang.Text == "") && (cmbMaLoaiHang.Text == ""))
+            if ((txtMaHang.Text == "") && (txtTenHang.Text == "") && (cmbMaLoaiHang.Text == "") && (cmbNhaCungCap.Text == ""))
             {
                 MessageBox.Show("Bạn hãy nhập điều kiện tìm kiếm", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
             HangHoa HH = new HangHoa();
             HH.MaHang = txtMaHang.Text;
-            HH.TenHang = txtTenHang.Text;           
+            HH.TenHang = txtTenHang.Text;
             
-            HH.LoaiHang = cmbMaLoaiHang.Text;
+            if (cmbMaLoaiHang.SelectedValue !=null)
+            {
+                HH.LoaiHang = cmbMaLoaiHang.SelectedValue.ToString().Trim();
+            }
+            else
+            {
+                HH.LoaiHang = "";
+            }
+            if (cmbNhaCungCap.SelectedValue != null)
+            {
+                MessageBox.Show(cmbNhaCungCap.SelectedValue.ToString().Trim());
+                HH.MaNCC = int.Parse(cmbNhaCungCap.SelectedValue.ToString().Trim());
+            }
+            else
+            {
+                HH.MaNCC = -1;
+            }
+
 
             DataTable tblH = BLL_HangHoa.FindHangHoa(HH);
             if (tblH.Rows.Count == 0)

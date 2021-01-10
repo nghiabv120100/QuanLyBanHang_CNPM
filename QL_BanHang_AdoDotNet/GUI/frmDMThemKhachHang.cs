@@ -264,7 +264,7 @@ namespace QL_BanHang_AdoDotNet.GUI
                                ||xoaKyTuDacBiet(x.DienThoai).Contains(para)||x.Email.ToLower().Contains(para)
                                select x;
             dgvKhachHang.DataSource = FilteredList.ToList();
-            MessageBox.Show(xoaKyTuDacBiet(y.DienThoai));
+      
         }
         private string xoaKyTuDacBiet(string sdt)
         {

@@ -18,5 +18,6 @@ namespace QL_BanHang_AdoDotNet.DTO
         public int ThoiGianBaoHanh { get; set; }
         public string XuatXu { get; set; }
         public string LoaiHang { get; set; }
+        public int MaNCC { get; set; }
     }
 }

@@ -19,9 +19,10 @@ namespace QL_BanHang_AdoDotNet.GUI
         {
             InitializeComponent();
         }
+        DataTable dsHHHienThi;
         List<HangHoa> dsHH = new List<HangHoa>();
         List<LoaiHang> dsLH = new List<LoaiHang>();
-
+        List<NhaCungCap> dsNCC = new List<NhaCungCap>();
         private void KhoaButton()
         {        
             btnTimKiem.Enabled = false;
@@ -44,6 +45,8 @@ namespace QL_BanHang_AdoDotNet.GUI
             dgvHangHoa.Columns[8].HeaderText = "Xuất xứ";
             dgvHangHoa.Columns[9].HeaderText = "Loại hàng";
             dgvHangHoa.Columns[5].Visible = false;
+            dgvHangHoa.Columns[9].Visible = false;
+            dgvHangHoa.Columns[10].Visible = false;
 
 
             if (Cons.Quyen == 0)
@@ -54,7 +57,8 @@ namespace QL_BanHang_AdoDotNet.GUI
         private void HienThiDanhSachHangHoa()
         {
             dsHH = BLL_HangHoa.LayToanBoHangHoa();
-            dgvHangHoa.DataSource = dsHH;
+            dsHHHienThi = BLL_HangHoa.LayToanBoHangHoaHienThi();
+            dgvHangHoa.DataSource = dsHHHienThi;
             dgvHangHoa.AllowUserToAddRows = false;
             dgvHangHoa.EditMode = DataGridViewEditMode.EditProgrammatically;
 
@@ -62,10 +66,17 @@ namespace QL_BanHang_AdoDotNet.GUI
         private void HienThiDanhSachLoaiHang()
         {
             dsLH = BLL_LoaiHang.LayToanBoLoaiHang();
+            dsNCC = BLL_NhaCungCap.LayToanBoNhaCungCap();
+
             cmbMaLoaiHang.DataSource = dsLH;
-            cmbMaLoaiHang.DisplayMember = "MaLoaiHang";
+            cmbMaLoaiHang.DisplayMember = "TenLoaiHang";
             cmbMaLoaiHang.ValueMember = "MaLoaiHang";
             cmbMaLoaiHang.SelectedIndex = -1;
+
+            cmbNhaCungCap.DataSource = dsNCC;
+            cmbNhaCungCap.DisplayMember = "TenNhaCungCap";
+            cmbNhaCungCap.ValueMember = "MaNhaCungCap";
+            cmbNhaCungCap.SelectedIndex = -1;
         }
         
         private void ResetValues()
@@ -80,6 +91,9 @@ namespace QL_BanHang_AdoDotNet.GUI
             txtPath.Text = "";
             txtGhichu.Text = "";
             txtThoiGianBaoHanh.Text = "";
+            txtTimKiem.Text = "";
+            cmbNhaCungCap.SelectedIndex = -1;
+            btnTimKiem.Enabled = true;
         }
 
        
@@ -90,9 +104,6 @@ namespace QL_BanHang_AdoDotNet.GUI
                 return;
             this.Close();
         }
-
-
-       
 
         private void dgvHangHoa_Click(object sender, EventArgs e)
         {
@@ -107,16 +118,17 @@ namespace QL_BanHang_AdoDotNet.GUI
             btnTimKiem.Enabled = false;
             // Hiển thị thông tin lên bảng thông tin chi tiết
             int indexRow = dgvHangHoa.SelectedRows[0].Index;
-            txtMaHang.Text=dgvHangHoa[0,indexRow].Value.ToString();
-            txtTenHang.Text=dgvHangHoa[1,indexRow].Value.ToString();
-            txtSoluong.Text=dgvHangHoa[2,indexRow].Value.ToString();
-            txtDongianhap.Text=dgvHangHoa[3,indexRow].Value.ToString();
-            txtDongiaban.Text=dgvHangHoa[4,indexRow].Value.ToString();
-            txtPath.Text=dgvHangHoa[5,indexRow].Value.ToString();
-            txtGhichu.Text=dgvHangHoa[6,indexRow].Value.ToString();
-            txtThoiGianBaoHanh.Text=dgvHangHoa[7,indexRow].Value.ToString();
-            txtXuatXu.Text=dgvHangHoa[8,indexRow].Value.ToString();
-            cmbMaLoaiHang.Text= dgvHangHoa[9, indexRow].Value.ToString();
+            txtMaHang.Text = dgvHangHoa[0, indexRow].Value.ToString();
+            txtTenHang.Text = dgvHangHoa[1, indexRow].Value.ToString();
+            txtSoluong.Text = dgvHangHoa[2, indexRow].Value.ToString();
+            txtDongianhap.Text = dgvHangHoa[3, indexRow].Value.ToString();
+            txtDongiaban.Text = dgvHangHoa[4, indexRow].Value.ToString();
+            txtPath.Text = dgvHangHoa[5, indexRow].Value.ToString();
+            txtGhichu.Text = dgvHangHoa[6, indexRow].Value.ToString();
+            txtThoiGianBaoHanh.Text = dgvHangHoa[7, indexRow].Value.ToString();
+            txtXuatXu.Text = dgvHangHoa[8, indexRow].Value.ToString();
+            cmbMaLoaiHang.Text = dgvHangHoa[11, indexRow].Value.ToString();
+            cmbNhaCungCap.Text = dgvHangHoa[12, indexRow].Value.ToString();
             try
             {
                 picAnh.Image = new Bitmap(Application.StartupPath + "\\Resources\\" + txtPath.Text);
@@ -137,28 +149,64 @@ namespace QL_BanHang_AdoDotNet.GUI
         private void btnHienThiDS_Click(object sender, EventArgs e)
         {
             HienThiDanhSachHangHoa();
+            ResetValues();
         }
 
         private void btnTimKiem_Click(object sender, EventArgs e)
         {
             string sql;
-            if ((txtMaHang.Text == "") && (txtTenHang.Text == "") && (cmbMaLoaiHang.Text == ""))
-            {
-                MessageBox.Show("Bạn hãy nhập điều kiện tìm kiếm", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return;
-            }
-            HangHoa HH = new HangHoa();
-            HH.MaHang = txtMaHang.Text;
-            HH.TenHang = txtTenHang.Text;           
-            
-            HH.LoaiHang = cmbMaLoaiHang.Text;
 
-            DataTable tblH = BLL_HangHoa.FindHangHoa(HH);
-            if (tblH.Rows.Count == 0)
-                MessageBox.Show("Không có bản ghi thoả mãn điều kiện tìm kiếm!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            else MessageBox.Show("Có " + tblH.Rows.Count + "  bản ghi thoả mãn điều kiện!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            dgvHangHoa.DataSource = tblH;
-            ResetValues();
+            if (txtTimKiem.Text.Trim() == "")
+            {
+    
+                if ((txtMaHang.Text == "") && (txtTenHang.Text == "") && (cmbMaLoaiHang.Text == "") && (cmbNhaCungCap.Text == ""))
+                {
+                    MessageBox.Show("Bạn hãy nhập điều kiện tìm kiếm", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+                HangHoa HH = new HangHoa();
+                HH.MaHang = txtMaHang.Text;
+                HH.TenHang = txtTenHang.Text;
+
+                if (cmbMaLoaiHang.SelectedValue != null)
+                {
+                    HH.LoaiHang = cmbMaLoaiHang.SelectedValue.ToString().Trim();
+                }
+                else
+                {
+                    HH.LoaiHang = "";
+                }
+                if (cmbNhaCungCap.SelectedValue != null)
+                {
+                    MessageBox.Show(cmbNhaCungCap.SelectedValue.ToString().Trim());
+                    HH.MaNCC = int.Parse(cmbNhaCungCap.SelectedValue.ToString().Trim());
+                }
+                else
+                {
+                    HH.MaNCC = -1;
+                }
+
+
+                DataTable tblH = BLL_HangHoa.FindHangHoa(HH);
+                if (tblH.Rows.Count == 0)
+                    MessageBox.Show("Không có bản ghi thoả mãn điều kiện tìm kiếm!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                else MessageBox.Show("Có " + tblH.Rows.Count + "  bản ghi thoả mãn điều kiện!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                dgvHangHoa.DataSource = tblH;
+                ResetValues();
+            }
+            else
+            {
+                string para = txtTimKiem.Text;
+                DataTable tblH= BLL_HangHoa.TimKiemHangHoa(para);
+                if (tblH.Rows.Count == 0)
+                    MessageBox.Show("Không có bản ghi thoả mãn điều kiện tìm kiếm!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                else MessageBox.Show("Có " + tblH.Rows.Count + "  bản ghi thoả mãn điều kiện!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                dgvHangHoa.DataSource = tblH;
+                ResetValues();
+
+
+            }    
+            
         }
 
         private void cboMaLoaiHang_SelectedIndexChanged(object sender, EventArgs e)
@@ -217,6 +265,11 @@ namespace QL_BanHang_AdoDotNet.GUI
                 Cons.maHangHoa = txtMaHang.Text;
                 this.Close();
             }
+        }
+
+        private void panel2_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }
