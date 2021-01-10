@@ -30,7 +30,7 @@
         {
             this.panel2 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.txtEmail = new System.Windows.Forms.TextBox();
             this.txtSoDienThoai = new System.Windows.Forms.TextBox();
             this.txtTenNhaCungCap = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
@@ -56,7 +56,7 @@
             // panel2
             // 
             this.panel2.Controls.Add(this.label1);
-            this.panel2.Controls.Add(this.textBox3);
+            this.panel2.Controls.Add(this.txtEmail);
             this.panel2.Controls.Add(this.txtSoDienThoai);
             this.panel2.Controls.Add(this.txtTenNhaCungCap);
             this.panel2.Controls.Add(this.label6);
@@ -85,13 +85,13 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Danh Mục Nhà Cung Cấp";
             // 
-            // textBox3
+            // txtEmail
             // 
-            this.textBox3.Location = new System.Drawing.Point(786, 126);
-            this.textBox3.Margin = new System.Windows.Forms.Padding(4);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(263, 26);
-            this.textBox3.TabIndex = 1;
+            this.txtEmail.Location = new System.Drawing.Point(786, 126);
+            this.txtEmail.Margin = new System.Windows.Forms.Padding(4);
+            this.txtEmail.Name = "txtEmail";
+            this.txtEmail.Size = new System.Drawing.Size(263, 26);
+            this.txtEmail.TabIndex = 1;
             // 
             // txtSoDienThoai
             // 
@@ -184,15 +184,15 @@
             this.panel1.Controls.Add(this.btnXoa);
             this.panel1.Controls.Add(this.btnThem);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel1.Location = new System.Drawing.Point(0, 658);
+            this.panel1.Location = new System.Drawing.Point(0, 682);
             this.panel1.Margin = new System.Windows.Forms.Padding(4);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1397, 120);
+            this.panel1.Size = new System.Drawing.Size(1397, 96);
             this.panel1.TabIndex = 5;
             // 
             // btnDong
             // 
-            this.btnDong.Location = new System.Drawing.Point(1020, 45);
+            this.btnDong.Location = new System.Drawing.Point(1019, 28);
             this.btnDong.Margin = new System.Windows.Forms.Padding(4);
             this.btnDong.Name = "btnDong";
             this.btnDong.Size = new System.Drawing.Size(94, 29);
@@ -203,7 +203,7 @@
             // 
             // btnBoQua
             // 
-            this.btnBoQua.Location = new System.Drawing.Point(877, 46);
+            this.btnBoQua.Location = new System.Drawing.Point(876, 29);
             this.btnBoQua.Margin = new System.Windows.Forms.Padding(4);
             this.btnBoQua.Name = "btnBoQua";
             this.btnBoQua.Size = new System.Drawing.Size(94, 29);
@@ -214,7 +214,7 @@
             // 
             // btnLuu
             // 
-            this.btnLuu.Location = new System.Drawing.Point(712, 45);
+            this.btnLuu.Location = new System.Drawing.Point(711, 28);
             this.btnLuu.Margin = new System.Windows.Forms.Padding(4);
             this.btnLuu.Name = "btnLuu";
             this.btnLuu.Size = new System.Drawing.Size(94, 29);
@@ -225,7 +225,7 @@
             // 
             // btnSua
             // 
-            this.btnSua.Location = new System.Drawing.Point(570, 46);
+            this.btnSua.Location = new System.Drawing.Point(569, 29);
             this.btnSua.Margin = new System.Windows.Forms.Padding(4);
             this.btnSua.Name = "btnSua";
             this.btnSua.Size = new System.Drawing.Size(94, 29);
@@ -236,7 +236,7 @@
             // 
             // btnXoa
             // 
-            this.btnXoa.Location = new System.Drawing.Point(408, 45);
+            this.btnXoa.Location = new System.Drawing.Point(407, 28);
             this.btnXoa.Margin = new System.Windows.Forms.Padding(4);
             this.btnXoa.Name = "btnXoa";
             this.btnXoa.Size = new System.Drawing.Size(94, 29);
@@ -247,7 +247,7 @@
             // 
             // btnThem
             // 
-            this.btnThem.Location = new System.Drawing.Point(266, 46);
+            this.btnThem.Location = new System.Drawing.Point(265, 29);
             this.btnThem.Margin = new System.Windows.Forms.Padding(4);
             this.btnThem.Name = "btnThem";
             this.btnThem.Size = new System.Drawing.Size(94, 29);
@@ -259,21 +259,23 @@
             // dgvNhaCungCap
             // 
             this.dgvNhaCungCap.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvNhaCungCap.Location = new System.Drawing.Point(112, 232);
+            this.dgvNhaCungCap.Location = new System.Drawing.Point(0, 170);
             this.dgvNhaCungCap.Name = "dgvNhaCungCap";
             this.dgvNhaCungCap.RowHeadersWidth = 51;
             this.dgvNhaCungCap.RowTemplate.Height = 24;
-            this.dgvNhaCungCap.Size = new System.Drawing.Size(978, 150);
+            this.dgvNhaCungCap.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvNhaCungCap.Size = new System.Drawing.Size(1397, 505);
             this.dgvNhaCungCap.TabIndex = 6;
+            this.dgvNhaCungCap.Click += new System.EventHandler(this.dgvNhaCungCap_Click);
             // 
             // frmDMNhaCungCap
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1397, 778);
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.dgvNhaCungCap);
             this.Controls.Add(this.panel2);
-            this.Controls.Add(this.panel1);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(4);
@@ -302,7 +304,7 @@
         private System.Windows.Forms.Button btnSua;
         private System.Windows.Forms.Button btnXoa;
         private System.Windows.Forms.Button btnThem;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox txtEmail;
         private System.Windows.Forms.TextBox txtSoDienThoai;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TextBox txtDiaChi;

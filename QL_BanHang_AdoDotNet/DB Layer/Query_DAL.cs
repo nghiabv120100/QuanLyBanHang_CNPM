@@ -448,6 +448,7 @@ namespace QL_BanHang_AdoDotNet.DB_Layer
                     NCC.MaNhaCungCap = MaNhaCungCap;
                     NCC.TenNhaCungCap = TenNhaCungCap;
                     NCC.DiaChi = DiaChi;
+                    NCC.SoDienThoai = SoDienThoai;
                     NCC.Email = Email;
                     dsNCC.Add(NCC);
                 }

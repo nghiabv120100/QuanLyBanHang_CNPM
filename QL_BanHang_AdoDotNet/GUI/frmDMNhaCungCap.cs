@@ -59,60 +59,64 @@ namespace QL_BanHang_AdoDotNet.GUI
 
         private void btnBoQua_Click(object sender, EventArgs e)
         {
-            /*btnThem.Enabled = true;
+            btnThem.Enabled = true;
             btnLuu.Enabled = false;
             btnSua.Enabled = false;
             btnXoa.Enabled = false;
             txtMaNhaCungCap.Enabled = false;
-            ResetValues();*/
+            ResetValues();
         }
         private void ResetValues()
         {
-           /* txtMaNhaCungCap.Text = "";
-            txtTenNhaCungCap.Text = "";*/
+            txtMaNhaCungCap.Text = "";
+            txtTenNhaCungCap.Text = "";
+            txtDiaChi.Text = "";
+            txtEmail.Text = "";
+            txtSoDienThoai.Text = "";
         }
 
         private void btnThem_Click(object sender, EventArgs e)
         {
-           /* btnSua.Enabled = false;
+            btnSua.Enabled = false;
             btnXoa.Enabled = false;
             btnBoQua.Enabled = true;
             btnLuu.Enabled = true;
             btnThem.Enabled = false;
             ResetValues();
-            txtMaNhaCungCap.Text = "LH" + (dgvNhaCungCap.Rows.Count + 1).ToString();
             txtMaNhaCungCap.Enabled = false;
-            txtTenNhaCungCap.Focus();*/
+            txtTenNhaCungCap.Focus();
         }
 
         private void btnLuu_Click(object sender, EventArgs e)
         {
-            /*NhaCungCap LH = new NhaCungCap();
-            LH.MaNhaCungCap = txtMaNhaCungCap.Text;
-            LH.TenNhaCungCap = txtTenNhaCungCap.Text;
-            int res = BLL_NhaCungCap.InsertNhaCungCap(LH);
+            NhaCungCap NCC = new NhaCungCap();
+          
+            NCC.TenNhaCungCap = txtTenNhaCungCap.Text;
+            NCC.DiaChi = txtDiaChi.Text;
+            NCC.SoDienThoai = txtSoDienThoai.Text;
+            NCC.Email = txtEmail.Text;
+            int res = BLL_NhaCungCap.InsertNhaCungCap(NCC);
             if (res > 0)
             {
-                MessageBox.Show("Thêm loại hàng thành công");
+                MessageBox.Show("Thêm nhà cung cấp thành công thành công");
                 HienThiDanhSachNhaCungCap();
                 ResetValues();
             }
-            else if (res == 0)
-            {
-                MessageBox.Show("Mã loại hàng đã tồn tại");
-            }
             else
             {
-                MessageBox.Show("Thêm loại hàng thất bại");
-            }*/
+                MessageBox.Show("Thêm nhà cung cấp thất bại");
+            }
         }
 
         private void btnSua_Click(object sender, EventArgs e)
         {
-            /*NhaCungCap LH = new NhaCungCap();
-            LH.MaNhaCungCap = txtMaNhaCungCap.Text;
-            LH.TenNhaCungCap = txtTenNhaCungCap.Text;
-            int res = BLL_NhaCungCap.UpdateNhaCungCap(LH);
+            NhaCungCap NCC = new NhaCungCap();
+            NCC.MaNhaCungCap = int.Parse(txtMaNhaCungCap.Text);
+            NCC.TenNhaCungCap = txtTenNhaCungCap.Text;
+            NCC.DiaChi = txtDiaChi.Text;
+            NCC.SoDienThoai = txtSoDienThoai.Text;
+            NCC.Email = txtEmail.Text;
+            int res = BLL_NhaCungCap.UpdateNhaCungCap(NCC);
             if (res > 0)
             {
                 MessageBox.Show("Sửa loại hàng thành công");
@@ -121,16 +125,16 @@ namespace QL_BanHang_AdoDotNet.GUI
             else
             {
                 MessageBox.Show("Sửa loại hàng thất bại");
-            }*/
+            }
 
         }
 
         private void btnXoa_Click(object sender, EventArgs e)
         {
-           /* DialogResult dlr = MessageBox.Show("Bạn có chắn chắn muốn xoá không?", "Thông báo", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Warning);
+            DialogResult dlr = MessageBox.Show("Bạn có chắn chắn muốn xoá không?", "Thông báo", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Warning);
             if (dlr == DialogResult.Cancel || dlr == DialogResult.No)
                 return;
-            int res = BLL_NhaCungCap.DeleteNhaCungCap(txtMaNhaCungCap.Text.Trim());
+            int res = BLL_NhaCungCap.DeleteNhaCungCap(int.Parse(txtMaNhaCungCap.Text.Trim()));
             if (res > 0)
             {
                 HienThiDanhSachNhaCungCap();
@@ -140,12 +144,12 @@ namespace QL_BanHang_AdoDotNet.GUI
             else
             {
                 MessageBox.Show("Xoá thất bại");
-            }*/
+            }
         }
 
         private void dgvNhaCungCap_Click(object sender, EventArgs e)
         {
-           /* if (dgvNhaCungCap.Rows.Count < 1)
+            if (dgvNhaCungCap.Rows.Count < 1)
                 return;
             if (btnThem.Enabled == false && Cons.Quyen == 1)
             {
@@ -162,10 +166,16 @@ namespace QL_BanHang_AdoDotNet.GUI
             int indexRow = dgvNhaCungCap.SelectedRows[0].Index;
             txtMaNhaCungCap.Text = dgvNhaCungCap[0, indexRow].Value.ToString();
             txtTenNhaCungCap.Text = dgvNhaCungCap[1, indexRow].Value.ToString();
+            txtDiaChi.Text = dgvNhaCungCap[2, indexRow].Value.ToString();
+            txtSoDienThoai.Text = dgvNhaCungCap[3, indexRow].Value.ToString();
+            txtEmail.Text = dgvNhaCungCap[4, indexRow].Value.ToString();
+           
             btnSua.Enabled = true;
             btnXoa.Enabled = true;
 
-            KhoaButton();*/
+            KhoaButton();
         }
+
+        
     }
 }
