@@ -103,5 +103,13 @@ namespace QL_BanHang_AdoDotNet.GUI
             frm.Dock = DockStyle.Fill;
             frm.Show();
         }
+
+        private void btnQLND_Click(object sender, EventArgs e)
+        {
+            frmQLND frm = new frmQLND();
+            frm.MdiParent = this;
+            frm.Dock = DockStyle.Fill;
+            frm.Show();
+        }
     }
 }

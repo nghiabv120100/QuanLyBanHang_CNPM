@@ -460,5 +460,57 @@ namespace QL_BanHang_AdoDotNet.DB_Layer
                 return null;
             }
         }
+
+        public static List<ThongTin> LayToanBoNguoiDung()
+        {
+            try
+            {
+                List<ThongTin> dsND = new List<ThongTin>();
+                OpenConnection();
+                SqlCommand command = new SqlCommand();
+                command.CommandType = CommandType.Text;
+                command.CommandText = "Select  NhanVien.*,TenDangNhap,MatKhau,LoaiTaiKhoan from dbo.NhanVien, dbo.TaiKhoan where NhanVien.MaNhanVien=TaiKhoan.MaNV";
+                command.Connection = conn;
+                SqlDataReader reader = command.ExecuteReader();
+                while (reader.Read())
+                {
+                    string TenTaiKhoan = reader.GetString(8);
+                    string MatKhau = reader.GetString(9);
+                    int LoaiTaiKhoan = reader.GetInt32(10);
+
+                    string MaNhanVien = reader.GetString(0);
+                    string TenNhanVien = reader.GetString(1);
+                    string DiaChi = reader.GetString(2);
+                    string DienThoai = reader.GetString(3);
+                    string GioiTinh = reader.GetString(4);
+                    DateTime NgaySinh = reader.GetDateTime(7);
+                    string ChucVu = reader.GetString(5);
+                    int Luong = reader.GetInt32(6);
+
+                    ThongTin NV = new ThongTin();
+                    NV.TenTaiKhoan = TenTaiKhoan;
+                    NV.MatKhau = MatKhau;
+                    NV.LoaiTaiKhoan = LoaiTaiKhoan;
+
+                    NV.MaNhanVien = MaNhanVien;
+                    NV.TenNhanVien = TenNhanVien;
+                    NV.DiaChi = DiaChi;
+                    NV.DienThoai = DienThoai;
+                    NV.GioiTinh = GioiTinh;
+                    NV.NgaySinh = NgaySinh;
+                    NV.ChucVu = ChucVu;
+                    NV.Luong = Luong;
+                    dsND.Add(NV);
+                }
+                reader.Close();
+                return dsND;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+                return null;
+            }
+
+        }
     }
 }

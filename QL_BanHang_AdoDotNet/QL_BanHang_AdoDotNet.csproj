@@ -73,6 +73,7 @@
     <Compile Include="BS Layer\BLL_NhaCungCap.cs" />
     <Compile Include="BS Layer\BLL_NhanVien.cs" />
     <Compile Include="BS Layer\BLL_TaiKhoan.cs" />
+    <Compile Include="BS Layer\BLL_ThongTin.cs" />
     <Compile Include="DB Layer\DAL.cs" />
     <Compile Include="DB Layer\Query_DAL.cs" />
     <Compile Include="DTO\BieuDo.cs" />
@@ -85,6 +86,7 @@
     <Compile Include="DTO\NhaCungCap.cs" />
     <Compile Include="DTO\NhanVien.cs" />
     <Compile Include="DTO\TaiKhoan.cs" />
+    <Compile Include="DTO\ThongTin.cs" />
     <Compile Include="frmReport.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -157,6 +159,12 @@
     <Compile Include="GUI\frmMain.Designer.cs">
       <DependentUpon>frmMain.cs</DependentUpon>
     </Compile>
+    <Compile Include="GUI\frmQLND.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\frmQLND.Designer.cs">
+      <DependentUpon>frmQLND.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI\WindowSettings.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -204,6 +212,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\frmMain.resx">
       <DependentUpon>frmMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\frmQLND.resx">
+      <DependentUpon>frmQLND.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

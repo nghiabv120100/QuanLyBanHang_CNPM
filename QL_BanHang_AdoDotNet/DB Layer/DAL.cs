@@ -10,7 +10,7 @@ namespace QL_BanHang_AdoDotNet.DB_Layer
 {
     public class DAL
     {
-        public static string strConn = "Server =DESKTOP-4ULE13O;Database=QL_BanHang;User Id=sa;pwd=123456";
+        public static string strConn = "Server =LAPTOP-SEQ3NRS1;Database=QL_BanHang;User Id=sa;pwd=123456";
         public static SqlConnection conn = null;
         public static void OpenConnection()
         {
