@@ -29,5 +29,28 @@ namespace QL_BanHang_AdoDotNet.BS_Layer
                 $"Where TenDangNhap=N'{tk.TenTaiKhoan.Trim()}'";
             return Query_DAL.KiemTraTaiKhoan(sql);
         }
+
+        public static int InsertTaiKhoan(TaiKhoan tk)
+        {
+            string sql = "Insert into dbo.TaiKhoan "
+                + "Values"
+                + $"('{tk.TenTaiKhoan}','{tk.MatKhau}',{tk.LoaiTaiKhoan},'{tk.MaNV}')";
+            return Query_DAL.InsertData(sql);
+        }
+        public static int UpdateTaiKhoan(TaiKhoan tk)
+        {
+            string sql = "Update dbo.TaiKhoan "
+                + $"set MatKhau='{tk.MatKhau}',LoaiTaiKhoan={tk.LoaiTaiKhoan},MaNV='{tk.MaNV}' "
+                + $"Where TenDangNhap='{tk.TenTaiKhoan}'";
+            return Query_DAL.UpdateData(sql);
+        }
+
+        public static int DeleteTaiKhoan(string TenDangNhap)
+        {
+            string sql = "Delete dbo.TaiKhoan "
+                + $"Where TenDangNhap='{TenDangNhap}'";
+            return Query_DAL.DeleteData(sql);
+        }
+
     }
 }

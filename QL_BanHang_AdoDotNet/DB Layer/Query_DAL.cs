@@ -199,6 +199,53 @@ namespace QL_BanHang_AdoDotNet.DB_Layer
             }
             
         }
+
+      /*  public static DataTable LayToanBoHangHoaHienThi()
+        {
+            try
+            {
+                OpenConnection();
+                SqlCommand command = new SqlCommand();
+                command.CommandType = CommandType.Text;
+                command.CommandText = "Select HangHoa.*,TenLoaiHang,TenNhaCungCap from dbo.HangHoa,LoaiHang,NhaCungCap where HangHoa.LoaiHang = LoaiHang.MaLoaiHang and HangHoa.MaNCC=NhaCungCap.MaNCC";
+                command.Connection = conn;
+                SqlDataReader reader = command.ExecuteReader();
+                while (reader.Read())
+                {
+                    string MaHangHoa = reader.GetString(0);
+                    string TenHangHoa = reader.GetString(1);
+                    int SoLuong = reader.GetInt32(2);
+                    string DonGiaNhap = reader.GetString(3);
+                    string DonGiaBan = reader.GetString(4);
+                    string Anh = reader.GetString(5);
+                    string GhiChu = reader.GetString(6);
+                    int ThoiGianBaoHanh = reader.GetInt32(7);
+                    string XuatXu = reader.GetString(8);
+                    string LoaiHang = reader.GetString(9);
+
+                    HangHoa HH = new HangHoa();
+                    HH.MaHang = MaHangHoa;
+                    HH.TenHang = TenHangHoa;
+                    HH.SoLuong = SoLuong;
+                    HH.DonGiaNhap = DonGiaNhap;
+                    HH.DonGiaBan = DonGiaBan;
+                    HH.Anh = Anh;
+                    HH.GhiChu = GhiChu;
+                    HH.ThoiGianBaoHanh = ThoiGianBaoHanh;
+                    HH.XuatXu = XuatXu;
+                    HH.LoaiHang = LoaiHang;
+                    dsHH.Add(HH);
+                }
+                reader.Close();
+                return dsHH;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+                return null;
+            }
+
+        }*/
         public static List<LoaiHang> LayToanBoLoaiHang()
         {
             try
@@ -460,6 +507,57 @@ namespace QL_BanHang_AdoDotNet.DB_Layer
                 MessageBox.Show(ex.Message);
                 return null;
             }
+        }
+        public static List<ThongTin> LayToanBoNguoiDung()
+        {
+            try
+            {
+                List<ThongTin> dsND = new List<ThongTin>();
+                OpenConnection();
+                SqlCommand command = new SqlCommand();
+                command.CommandType = CommandType.Text;
+                command.CommandText = "Select  NhanVien.*,TenDangNhap,MatKhau,LoaiTaiKhoan from dbo.NhanVien, dbo.TaiKhoan where NhanVien.MaNhanVien=TaiKhoan.MaNV";
+                command.Connection = conn;
+                SqlDataReader reader = command.ExecuteReader();
+                while (reader.Read())
+                {
+                    string TenTaiKhoan = reader.GetString(8);
+                    string MatKhau = reader.GetString(9);
+                    int LoaiTaiKhoan = reader.GetInt32(10);
+
+                    string MaNhanVien = reader.GetString(0);
+                    string TenNhanVien = reader.GetString(1);
+                    string DiaChi = reader.GetString(2);
+                    string DienThoai = reader.GetString(3);
+                    string GioiTinh = reader.GetString(4);
+                    DateTime NgaySinh = reader.GetDateTime(7);
+                    string ChucVu = reader.GetString(5);
+                    int Luong = reader.GetInt32(6);
+
+                    ThongTin NV = new ThongTin();
+                    NV.TenTaiKhoan = TenTaiKhoan;
+                    NV.MatKhau = MatKhau;
+                    NV.LoaiTaiKhoan = LoaiTaiKhoan;
+
+                    NV.MaNhanVien = MaNhanVien;
+                    NV.TenNhanVien = TenNhanVien;
+                    NV.DiaChi = DiaChi;
+                    NV.DienThoai = DienThoai;
+                    NV.GioiTinh = GioiTinh;
+                    NV.NgaySinh = NgaySinh;
+                    NV.ChucVu = ChucVu;
+                    NV.Luong = Luong;
+                    dsND.Add(NV);
+                }
+                reader.Close();
+                return dsND;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+                return null;
+            }
+
         }
     }
 }

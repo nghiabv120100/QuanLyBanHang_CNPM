@@ -17,6 +17,12 @@ namespace QL_BanHang_AdoDotNet.BS_Layer
         {
             return Query_DAL.LayToanBoHangHoa();
         }
+
+        public static DataTable LayToanBoHangHoaHienThi()
+        {
+            string sql = "Select HangHoa.*,TenLoaiHang,TenNhaCungCap from dbo.HangHoa,LoaiHang,NhaCungCap where HangHoa.LoaiHang = LoaiHang.MaLoaiHang and HangHoa.MaNCC=NhaCungCap.MaNCC";
+            return Query_DAL.GetDataToTable(sql);
+        }
         public static DataTable FindHangHoa(HangHoa HH)
         {
             string sql = "SELECT * from dbo.HangHoa WHERE 1=1";

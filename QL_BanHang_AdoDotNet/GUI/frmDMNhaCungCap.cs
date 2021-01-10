@@ -51,10 +51,10 @@ namespace QL_BanHang_AdoDotNet.GUI
         }
         private void btnDong_Click(object sender, EventArgs e)
         {
-            /*DialogResult dlr = MessageBox.Show("Bạn có chắn chắn muốn thoát không?", "Thông báo", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Warning);
+            DialogResult dlr = MessageBox.Show("Bạn có chắn chắn muốn thoát không?", "Thông báo", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Warning);
             if (dlr == DialogResult.Cancel || dlr == DialogResult.No)
                 return;
-            this.Close();*/
+            this.Close();
         }
 
         private void btnBoQua_Click(object sender, EventArgs e)

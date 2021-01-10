@@ -37,13 +37,14 @@
             this.label1 = new System.Windows.Forms.Label();
             this.btnThoat = new System.Windows.Forms.Button();
             this.btnBieuDo = new System.Windows.Forms.Button();
+            this.btnNhaCungCap = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.lblChucVu = new System.Windows.Forms.Label();
             this.lblDangXuat = new System.Windows.Forms.Label();
             this.label = new System.Windows.Forms.Label();
             this.lblTenNhanVien = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.btnNhaCungCap = new System.Windows.Forms.Button();
+            this.btnQLND = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
@@ -158,6 +159,7 @@
             this.panel1.Controls.Add(this.btnNhaCungCap);
             this.panel1.Controls.Add(this.btnHangHoa);
             this.panel1.Controls.Add(this.btnLoaiHang);
+            this.panel1.Controls.Add(this.btnQLND);
             this.panel1.Controls.Add(this.btnNhanVien);
             this.panel1.Controls.Add(this.btnHoaDon);
             this.panel1.Controls.Add(this.btnKhachHang);
@@ -219,6 +221,26 @@
             this.btnBieuDo.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnBieuDo.UseVisualStyleBackColor = false;
             this.btnBieuDo.Click += new System.EventHandler(this.btnBieuDo_Click);
+            // 
+            // btnNhaCungCap
+            // 
+            this.btnNhaCungCap.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btnNhaCungCap.FlatAppearance.BorderSize = 0;
+            this.btnNhaCungCap.FlatAppearance.CheckedBackColor = System.Drawing.Color.Lime;
+            this.btnNhaCungCap.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.btnNhaCungCap.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Maroon;
+            this.btnNhaCungCap.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnNhaCungCap.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnNhaCungCap.ForeColor = System.Drawing.Color.White;
+            this.btnNhaCungCap.Location = new System.Drawing.Point(0, 446);
+            this.btnNhaCungCap.Margin = new System.Windows.Forms.Padding(4);
+            this.btnNhaCungCap.Name = "btnNhaCungCap";
+            this.btnNhaCungCap.Size = new System.Drawing.Size(262, 69);
+            this.btnNhaCungCap.TabIndex = 1;
+            this.btnNhaCungCap.Text = "Nhà Cung Cấp";
+            this.btnNhaCungCap.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnNhaCungCap.UseVisualStyleBackColor = false;
+            this.btnNhaCungCap.Click += new System.EventHandler(this.btnNhaCungCap_Click);
             // 
             // panel2
             // 
@@ -293,25 +315,26 @@
             this.label2.TabIndex = 0;
             this.label2.Text = "Họ Tên:";
             // 
-            // btnNhaCungCap
+            // btnQLND
             // 
-            this.btnNhaCungCap.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.btnNhaCungCap.FlatAppearance.BorderSize = 0;
-            this.btnNhaCungCap.FlatAppearance.CheckedBackColor = System.Drawing.Color.Lime;
-            this.btnNhaCungCap.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
-            this.btnNhaCungCap.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Maroon;
-            this.btnNhaCungCap.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnNhaCungCap.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnNhaCungCap.ForeColor = System.Drawing.Color.White;
-            this.btnNhaCungCap.Location = new System.Drawing.Point(0, 446);
-            this.btnNhaCungCap.Margin = new System.Windows.Forms.Padding(4);
-            this.btnNhaCungCap.Name = "btnNhaCungCap";
-            this.btnNhaCungCap.Size = new System.Drawing.Size(262, 69);
-            this.btnNhaCungCap.TabIndex = 1;
-            this.btnNhaCungCap.Text = "Nhà Cung Cấp";
-            this.btnNhaCungCap.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnNhaCungCap.UseVisualStyleBackColor = false;
-            this.btnNhaCungCap.Click += new System.EventHandler(this.btnNhaCungCap_Click);
+            this.btnQLND.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btnQLND.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btnQLND.FlatAppearance.BorderSize = 0;
+            this.btnQLND.FlatAppearance.CheckedBackColor = System.Drawing.Color.Lime;
+            this.btnQLND.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.btnQLND.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Maroon;
+            this.btnQLND.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnQLND.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnQLND.ForeColor = System.Drawing.Color.White;
+            this.btnQLND.Location = new System.Drawing.Point(0, 167);
+            this.btnQLND.Margin = new System.Windows.Forms.Padding(4);
+            this.btnQLND.Name = "btnQLND";
+            this.btnQLND.Size = new System.Drawing.Size(262, 69);
+            this.btnQLND.TabIndex = 1;
+            this.btnQLND.Text = "QL Tài Khoản";
+            this.btnQLND.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnQLND.UseVisualStyleBackColor = false;
+            this.btnQLND.Click += new System.EventHandler(this.btnQLND_Click);
             // 
             // frmMain
             // 
@@ -356,5 +379,6 @@
         private System.Windows.Forms.Label lblTenNhanVien;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button btnNhaCungCap;
+        private System.Windows.Forms.Button btnQLND;
     }
 }

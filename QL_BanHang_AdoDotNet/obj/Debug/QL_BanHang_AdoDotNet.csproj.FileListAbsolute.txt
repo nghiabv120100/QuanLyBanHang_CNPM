@@ -483,3 +483,4 @@ E:\Information Technology\Project_Final\QuanLyBanHang_CNPM\QL_BanHang_AdoDotNet\
 E:\Information Technology\Project_Final\QuanLyBanHang_CNPM\QL_BanHang_AdoDotNet\obj\Debug\QL_BanHang_AdoDotNet.exe
 E:\Information Technology\Project_Final\QuanLyBanHang_CNPM\QL_BanHang_AdoDotNet\obj\Debug\QL_BanHang_AdoDotNet.pdb
 E:\Information Technology\Project_Final\QuanLyBanHang_CNPM\QL_BanHang_AdoDotNet\obj\Debug\QL_BanHang_AdoDotNet.GUI.frmDMNhaCungCap.resources
+E:\Information Technology\Project_Final\QuanLyBanHang_CNPM\QL_BanHang_AdoDotNet\obj\Debug\QL_BanHang_AdoDotNet.GUI.frmQLND.resources

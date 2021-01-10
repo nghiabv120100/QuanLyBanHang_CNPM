@@ -34,6 +34,8 @@
             this.picAnh = new System.Windows.Forms.PictureBox();
             this.txtGhichu = new System.Windows.Forms.TextBox();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.label12 = new System.Windows.Forms.Label();
             this.txtThoiGianBaoHanh = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
             this.txtXuatXu = new System.Windows.Forms.TextBox();
@@ -62,8 +64,6 @@
             this.btnLuu = new System.Windows.Forms.Button();
             this.btnSua = new System.Windows.Forms.Button();
             this.btnXoa = new System.Windows.Forms.Button();
-            this.label12 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvHangHoa)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picAnh)).BeginInit();
             this.panel2.SuspendLayout();
@@ -97,7 +97,7 @@
             // btnOpen
             // 
             this.btnOpen.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnOpen.Location = new System.Drawing.Point(1254, 23);
+            this.btnOpen.Location = new System.Drawing.Point(1188, 23);
             this.btnOpen.Name = "btnOpen";
             this.btnOpen.Size = new System.Drawing.Size(76, 43);
             this.btnOpen.TabIndex = 7;
@@ -126,6 +126,7 @@
             // 
             // panel2
             // 
+            this.panel2.Controls.Add(this.btnOpen);
             this.panel2.Controls.Add(this.comboBox1);
             this.panel2.Controls.Add(this.label12);
             this.panel2.Controls.Add(this.txtThoiGianBaoHanh);
@@ -133,7 +134,6 @@
             this.panel2.Controls.Add(this.txtXuatXu);
             this.panel2.Controls.Add(this.label10);
             this.panel2.Controls.Add(this.cmbMaLoaiHang);
-            this.panel2.Controls.Add(this.btnOpen);
             this.panel2.Controls.Add(this.picAnh);
             this.panel2.Controls.Add(this.txtGhichu);
             this.panel2.Controls.Add(this.label9);
@@ -156,6 +156,25 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(1342, 269);
             this.panel2.TabIndex = 7;
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(163, 169);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(187, 28);
+            this.comboBox1.TabIndex = 14;
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label12.Location = new System.Drawing.Point(42, 172);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(123, 20);
+            this.label12.TabIndex = 13;
+            this.label12.Text = "Nhà Cung Cấp:";
             // 
             // txtThoiGianBaoHanh
             // 
@@ -440,25 +459,6 @@
             this.btnXoa.Text = "Xoá";
             this.btnXoa.UseVisualStyleBackColor = true;
             this.btnXoa.Click += new System.EventHandler(this.btnXoa_Click);
-            // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.Location = new System.Drawing.Point(42, 172);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(123, 20);
-            this.label12.TabIndex = 13;
-            this.label12.Text = "Nhà Cung Cấp:";
-            // 
-            // comboBox1
-            // 
-            this.comboBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(163, 169);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(187, 28);
-            this.comboBox1.TabIndex = 14;
             // 
             // frmDMHangHoa
             // 

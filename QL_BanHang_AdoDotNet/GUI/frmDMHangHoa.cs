@@ -19,6 +19,7 @@ namespace QL_BanHang_AdoDotNet.GUI
         {
             InitializeComponent();
         }
+        DataTable dsHHHienThi;
         List<HangHoa> dsHH = new List<HangHoa>();
         List<LoaiHang> dsLH = new List<LoaiHang>();
 
@@ -62,8 +63,9 @@ namespace QL_BanHang_AdoDotNet.GUI
         }
         private void HienThiDanhSachHangHoa()
         {
+            dsHHHienThi = BLL_HangHoa.LayToanBoHangHoaHienThi();
             dsHH = BLL_HangHoa.LayToanBoHangHoa();
-            dgvHangHoa.DataSource = dsHH;
+            dgvHangHoa.DataSource = dsHHHienThi;
             dgvHangHoa.AllowUserToAddRows = false;
             dgvHangHoa.EditMode = DataGridViewEditMode.EditProgrammatically;
 
