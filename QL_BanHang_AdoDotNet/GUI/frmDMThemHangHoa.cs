@@ -47,12 +47,6 @@ namespace QL_BanHang_AdoDotNet.GUI
             dgvHangHoa.Columns[5].Visible = false;
             dgvHangHoa.Columns[9].Visible = false;
             dgvHangHoa.Columns[10].Visible = false;
-
-
-            if (Cons.Quyen == 0)
-            {
-                KhoaButton();
-            }
         }
         private void HienThiDanhSachHangHoa()
         {

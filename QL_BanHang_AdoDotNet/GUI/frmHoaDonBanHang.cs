@@ -86,11 +86,12 @@ namespace QL_BanHang_AdoDotNet.GUI
         {
             ResetData();
             cmbMahoadon.Items.Clear();
-            cmbMaNhanVien.Items.Clear();
+            //cmbMaNhanVien.Items.Clear();
             cmbMaKhach.Items.Clear();
             cmbMaHang.Items.Clear();
-            cmbMaNhanVien.Items.Add(BLL_NhanVien.findEmployeeByUsername(Cons.username).MaNhanVien);
-            cmbMaNhanVien.SelectedIndex = 0;
+            txtMaNhanVien.Text = BLL_NhanVien.findEmployeeByUsername(Cons.username).MaNhanVien;
+          /*  cmbMaNhanVien.Items.Add(BLL_NhanVien.findEmployeeByUsername(Cons.username).MaNhanVien);
+            cmbMaNhanVien.SelectedIndex = 0;*/
             foreach (KhachHang kh in dsKH)
             {
                 cmbMaKhach.Items.Add(kh.MaKhachHang);
@@ -108,16 +109,16 @@ namespace QL_BanHang_AdoDotNet.GUI
         #endregion
 
         #region ValuesChanged
-        private void cmbMaNhanVien_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            foreach (NhanVien nv in dsNV)
-            {
-                if (nv.MaNhanVien.Trim() == cmbMaNhanVien.SelectedItem.ToString().Trim())
-                {
-                    txtTennhanvien.Text = nv.TenNhanVien;
-                }
-            }
-        }
+        //private void cmbMaNhanVien_SelectedIndexChanged(object sender, EventArgs e)
+        //{
+        //    foreach (NhanVien nv in dsNV)
+        //    {
+        //        if (nv.MaNhanVien.Trim() == cmbMaNhanVien.SelectedItem.ToString().Trim())
+        //        {
+        //            txtTennhanvien.Text = nv.TenNhanVien;
+        //        }
+        //    }
+        //}
         public void cmbMaKhach_SelectedIndexChanged(object sender, EventArgs e)
         {
 
@@ -188,13 +189,23 @@ namespace QL_BanHang_AdoDotNet.GUI
             btnXoa.Enabled = true;
             btnLuu.Enabled = true;
             txtMaHDBan.Text = cmbMahoadon.Text;
+
+            foreach (NhanVien nv in dsNV)
+            {
+                if (nv.MaNhanVien.Trim() == txtMaNhanVien.Text.Trim())
+                {
+                    txtTennhanvien.Text = nv.TenNhanVien;
+                }
+            }
+
+         
             //Reset thông tin mặt hàng
             ResetHang();
             foreach (HoaDon hd in dsHD)
             {
                 if (hd.MaHoaDon.Trim() == txtMaHDBan.Text.Trim())
                 {
-                    cmbMaNhanVien.Text = hd.MaNhanVien;
+                    txtMaNhanVien.Text = hd.MaNhanVien;
                     cmbMaKhach.Text = hd.MaKhachHang;
                     dtpNgayban.Value = hd.NgayBan;
                     txtTongtien.Text = hd.TongTien.ToString();
@@ -215,7 +226,7 @@ namespace QL_BanHang_AdoDotNet.GUI
         {
             txtMaHDBan.Text = "";
             dtpNgayban.Text = DateTime.Now.ToShortDateString();
-            cmbMaNhanVien.Text = "";
+            txtMaNhanVien.Text = "";
             txtTennhanvien.Text = "";
             cmbMaKhach.Text = "";
             txtTenKhachHang.Text = "";
@@ -261,15 +272,24 @@ namespace QL_BanHang_AdoDotNet.GUI
             ResetValues();
             txtMaHDBan.Text = BLL_HoaDonBanHang.CreateKey("HDB");
             cmbMahoadon.Text = txtMaHDBan.Text;
+            txtMaNhanVien.Text = BLL_NhanVien.findEmployeeByUsername(Cons.username).MaNhanVien;
+
+            foreach (NhanVien nv in dsNV)
+            {
+                if (nv.MaNhanVien.Trim() == txtMaNhanVien.Text.Trim())
+                {
+                    txtTennhanvien.Text = nv.TenNhanVien;
+                }
+            }
         }
         
         private void btnLuu_Click(object sender, EventArgs e)
         {
 
-            if (cmbMaNhanVien.Text=="")
+            if (txtMaNhanVien.Text=="")
             {
                 MessageBox.Show("Vui lòng chọn nhân viên bán hàng");
-                cmbMaNhanVien.Focus();
+                txtMaNhanVien.Focus();
                 return;
             }
             if (cmbMaKhach.Text == "")
@@ -288,7 +308,7 @@ namespace QL_BanHang_AdoDotNet.GUI
             HoaDon hd = new HoaDon();
             hd.MaHoaDon = txtMaHDBan.Text;
             hd.MaKhachHang = cmbMaKhach.Text;
-            hd.MaNhanVien = cmbMaNhanVien.Text;
+            hd.MaNhanVien = txtMaNhanVien.Text;
             hd.NgayBan = dtpNgayban.Value;
             hd.TongTien = int.Parse(txtTongtien.Text);
             //
@@ -502,6 +522,11 @@ namespace QL_BanHang_AdoDotNet.GUI
             frm.Show();
             frm.FormClosed += cmbMaHangChanged;
             //frm.FormClosed += cmbMaHang_SelectedIndexChanged;
+        }
+
+        private void groupBox2_Enter(object sender, EventArgs e)
+        {
+
         }
     }
 }

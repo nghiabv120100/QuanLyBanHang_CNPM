@@ -39,6 +39,9 @@ namespace QL_BanHang_AdoDotNet.GUI
             dgvLoaiHang.Columns[0].HeaderText = "Mã LH";
             dgvLoaiHang.Columns[1].HeaderText = "Tên loại hàng";
             KhoaButton();
+            btnLuu.Enabled = false;
+            btnXoa.Enabled = false;
+            btnSua.Enabled = false;
         }
         private void HienThiDanhSachLoaiHang()
         {

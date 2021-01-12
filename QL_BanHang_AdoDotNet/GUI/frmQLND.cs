@@ -63,6 +63,15 @@ namespace QL_BanHang_AdoDotNet.GUI
             this.dgvNguoiDung.Columns[8].Visible = false;
             this.dgvNguoiDung.Columns[10].Visible = false;
 
+            txtChucVu.Enabled = false;
+            txtTenNhanVien.Enabled = false;
+            txtDiaChi.Enabled = false;
+            mtbDienThoai.Enabled = false;
+            txtLuong.Enabled = false;
+            dtpNgaySinh.Enabled = false;
+            chkNam.Enabled = false;
+            chkNu.Enabled = false;
+
 
         
             //Nhân viên không thể thao tác

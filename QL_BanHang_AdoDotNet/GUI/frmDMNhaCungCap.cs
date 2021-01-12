@@ -42,6 +42,9 @@ namespace QL_BanHang_AdoDotNet.GUI
             dgvNhaCungCap.Columns[3].HeaderText = "Số điện thoại";
             dgvNhaCungCap.Columns[4].HeaderText = "Email";
             KhoaButton();
+            btnLuu.Enabled = false;
+            btnXoa.Enabled = false;
+            btnSua.Enabled = false;
         }
         private void HienThiDanhSachNhaCungCap()
         {

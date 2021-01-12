@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.btnMo = new System.Windows.Forms.Button();
             this.btnBoQua = new System.Windows.Forms.Button();
             this.label19 = new System.Windows.Forms.Label();
             this.button5 = new System.Windows.Forms.Button();
@@ -58,7 +59,6 @@
             this.label7 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.btnThemKH = new System.Windows.Forms.Button();
-            this.cmbMaNhanVien = new System.Windows.Forms.ComboBox();
             this.mtbDienThoai = new System.Windows.Forms.MaskedTextBox();
             this.dtpNgayban = new System.Windows.Forms.DateTimePicker();
             this.txtTennhanvien = new System.Windows.Forms.TextBox();
@@ -74,7 +74,7 @@
             this.cmbMaKhach = new System.Windows.Forms.ComboBox();
             this.label9 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
-            this.btnMo = new System.Windows.Forms.Button();
+            this.txtMaNhanVien = new System.Windows.Forms.TextBox();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvHDBanHang)).BeginInit();
             this.panel2.SuspendLayout();
@@ -116,6 +116,17 @@
             this.groupBox2.TabIndex = 8;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Thông tin mặt hàng";
+            this.groupBox2.Enter += new System.EventHandler(this.groupBox2_Enter);
+            // 
+            // btnMo
+            // 
+            this.btnMo.Location = new System.Drawing.Point(304, 37);
+            this.btnMo.Name = "btnMo";
+            this.btnMo.Size = new System.Drawing.Size(45, 26);
+            this.btnMo.TabIndex = 12;
+            this.btnMo.Text = "Mở";
+            this.btnMo.UseVisualStyleBackColor = true;
+            this.btnMo.Click += new System.EventHandler(this.btnMo_Click);
             // 
             // btnBoQua
             // 
@@ -392,9 +403,9 @@
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.btnThemKH);
-            this.groupBox1.Controls.Add(this.cmbMaNhanVien);
             this.groupBox1.Controls.Add(this.mtbDienThoai);
             this.groupBox1.Controls.Add(this.dtpNgayban);
+            this.groupBox1.Controls.Add(this.txtMaNhanVien);
             this.groupBox1.Controls.Add(this.txtTennhanvien);
             this.groupBox1.Controls.Add(this.txtDiachi);
             this.groupBox1.Controls.Add(this.label4);
@@ -425,16 +436,6 @@
             this.btnThemKH.Text = "Thêm KH";
             this.btnThemKH.UseVisualStyleBackColor = true;
             this.btnThemKH.Click += new System.EventHandler(this.btnThemKH_Click);
-            // 
-            // cmbMaNhanVien
-            // 
-            this.cmbMaNhanVien.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cmbMaNhanVien.FormattingEnabled = true;
-            this.cmbMaNhanVien.Location = new System.Drawing.Point(244, 86);
-            this.cmbMaNhanVien.Name = "cmbMaNhanVien";
-            this.cmbMaNhanVien.Size = new System.Drawing.Size(186, 28);
-            this.cmbMaNhanVien.TabIndex = 8;
-            this.cmbMaNhanVien.SelectedIndexChanged += new System.EventHandler(this.cmbMaNhanVien_SelectedIndexChanged);
             // 
             // mtbDienThoai
             // 
@@ -576,15 +577,13 @@
             this.label8.TabIndex = 0;
             this.label8.Text = "Mã khách hàng";
             // 
-            // btnMo
+            // txtMaNhanVien
             // 
-            this.btnMo.Location = new System.Drawing.Point(304, 37);
-            this.btnMo.Name = "btnMo";
-            this.btnMo.Size = new System.Drawing.Size(45, 26);
-            this.btnMo.TabIndex = 12;
-            this.btnMo.Text = "Mở";
-            this.btnMo.UseVisualStyleBackColor = true;
-            this.btnMo.Click += new System.EventHandler(this.btnMo_Click);
+            this.txtMaNhanVien.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtMaNhanVien.Location = new System.Drawing.Point(244, 87);
+            this.txtMaNhanVien.Name = "txtMaNhanVien";
+            this.txtMaNhanVien.Size = new System.Drawing.Size(186, 26);
+            this.txtMaNhanVien.TabIndex = 1;
             // 
             // frmHoaDonBanHang
             // 
@@ -636,7 +635,6 @@
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.ComboBox cmbMaNhanVien;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.TextBox txtTennhanvien;
         private System.Windows.Forms.Label label4;
@@ -658,5 +656,6 @@
         private System.Windows.Forms.Button btnBoQua;
         private System.Windows.Forms.Button btnThemKH;
         private System.Windows.Forms.Button btnMo;
+        private System.Windows.Forms.TextBox txtMaNhanVien;
     }
 }
