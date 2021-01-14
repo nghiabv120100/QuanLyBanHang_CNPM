@@ -80,7 +80,22 @@ namespace QL_BanHang_AdoDotNet.GUI
             btnLuu.Enabled = true;
             btnThem.Enabled = false;
             ResetValues();
-            txtMaLoaiHang.Text = "LH" + (dgvLoaiHang.Rows.Count + 1).ToString();
+            int i = 1;
+            while (true)
+            {
+                txtMaLoaiHang.Text = "LH" + i.ToString();
+                i++;
+                bool flag = false;
+                foreach (LoaiHang lh in dsLH)
+                {
+                    if (txtMaLoaiHang.Text.Trim() == lh.MaLoaiHang.Trim())
+                    {
+                        flag = true;
+                    }
+                }
+                if (flag == false)
+                    break;
+            }
             txtMaLoaiHang.Enabled = false;
             txtTenLoaiHang.Focus();
         }
@@ -95,6 +110,7 @@ namespace QL_BanHang_AdoDotNet.GUI
             {
                 MessageBox.Show("Thêm loại hàng thành công");
                 HienThiDanhSachLoaiHang();
+                btnBoQua_Click(null, null);
                 ResetValues();
             }    
             else if(res==0)

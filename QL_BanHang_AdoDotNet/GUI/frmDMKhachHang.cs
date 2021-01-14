@@ -114,7 +114,24 @@ namespace QL_BanHang_AdoDotNet.GUI
             btnLuu.Enabled = true;
             btnThem.Enabled = false;
             ResetValues();
-            txtMaKhachHang.Text = "KH" + (dgvKhachHang.Rows.Count + 1).ToString();
+            
+            int i = 1;
+            while (true)
+            {
+                txtMaKhachHang.Text = "KH" + i.ToString();
+                i++;
+                bool flag = false;
+                foreach (KhachHang kh in dsKH)
+                {
+                    if (txtMaKhachHang.Text.Trim() == kh.MaKhachHang.Trim())
+                    {
+                        flag = true;
+                    }
+                }
+                if (flag == false)
+                    break;
+            }
+
             txtMaKhachHang.Enabled = false;
             txtTenKhachHang.Focus();
         }
@@ -129,7 +146,7 @@ namespace QL_BanHang_AdoDotNet.GUI
             }
             if (txtTenKhachHang.Text.Trim().Length == 0)
             {
-                MessageBox.Show("Tên nhân viên không được để trống", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Tên khách hàng không được để trống", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 txtTenKhachHang.Focus();
                 return;
             }
@@ -141,13 +158,13 @@ namespace QL_BanHang_AdoDotNet.GUI
             }
             if (mtbDienThoai.Text == "(   )     -")
             {
-                MessageBox.Show("Số điện thoại nhân viên không được để trống", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Số điện thoại khách hàng không được để trống", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 mtbDienThoai.Focus();
                 return;
             }
             if (txtTongChiTieu.Text.Trim().Length == 0)
             {
-                MessageBox.Show("Lương nhân viên không được để trống", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Tổng chi tiêu không được để trống", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 txtTongChiTieu.Focus();
                 return;
             }
@@ -177,6 +194,7 @@ namespace QL_BanHang_AdoDotNet.GUI
             {
                 HienThiDanhSachKhachHang();
                 MessageBox.Show("Thêm khách hàng thành công");
+                btnBoQua_Click(null, null);
             }
             else if (res == 0)
             {

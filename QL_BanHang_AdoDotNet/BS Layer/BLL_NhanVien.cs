@@ -59,7 +59,7 @@ namespace QL_BanHang_AdoDotNet.BS_Layer
             string sql1 = $"Delete from dbo.TaiKhoan " +
                 $"Where MaNV='{MaNhanVien}'";
             int flag1= Query_DAL.DeleteData(sql1);
-            if (flag1 <= 0)
+            if (flag1 < 0)
                 return flag1;
             string sql2 = $"Delete from dbo.NhanVien " +
                 $"Where MaNhanVien='{MaNhanVien}'";

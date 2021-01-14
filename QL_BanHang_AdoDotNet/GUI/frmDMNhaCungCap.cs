@@ -104,6 +104,7 @@ namespace QL_BanHang_AdoDotNet.GUI
                 MessageBox.Show("Thêm nhà cung cấp thành công thành công");
                 HienThiDanhSachNhaCungCap();
                 ResetValues();
+                btnBoQua_Click(null, null);
             }
             else
             {

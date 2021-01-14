@@ -36,7 +36,6 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btnDangNhap = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
-            this.lblQuenMatKhau = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -144,23 +143,12 @@
             this.label3.TabIndex = 0;
             this.label3.Text = "Login Here";
             // 
-            // lblQuenMatKhau
-            // 
-            this.lblQuenMatKhau.AutoSize = true;
-            this.lblQuenMatKhau.ForeColor = System.Drawing.SystemColors.Highlight;
-            this.lblQuenMatKhau.Location = new System.Drawing.Point(49, 369);
-            this.lblQuenMatKhau.Name = "lblQuenMatKhau";
-            this.lblQuenMatKhau.Size = new System.Drawing.Size(122, 20);
-            this.lblQuenMatKhau.TabIndex = 4;
-            this.lblQuenMatKhau.Text = "Quên mật khẩu";
-            // 
             // frmLogin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Black;
             this.ClientSize = new System.Drawing.Size(365, 521);
-            this.Controls.Add(this.lblQuenMatKhau);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.btnThoat);
             this.Controls.Add(this.btnDangNhap);
@@ -191,6 +179,5 @@
         private System.Windows.Forms.Button btnThoat;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label lblQuenMatKhau;
     }
 }

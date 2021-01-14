@@ -14,6 +14,8 @@ namespace QL_BanHang_AdoDotNet.GUI
 {
     public partial class frmDMNhanVien : Form
     {
+
+        List<NhanVien> dsNV;
         public frmDMNhanVien()
         {
             InitializeComponent();
@@ -56,7 +58,7 @@ namespace QL_BanHang_AdoDotNet.GUI
         }
         private void HienThiDanhSachNhanVien()
         {
-            List<NhanVien> dsNV = new List<NhanVien>();
+            dsNV = new List<NhanVien>();
             
             dsNV = BLL_NhanVien.LayToanBoNhanVien();
             dgvNhanVien.DataSource = dsNV;  
@@ -81,7 +83,23 @@ namespace QL_BanHang_AdoDotNet.GUI
             btnLuu.Enabled = true;
             btnThem.Enabled = false;
             ResetValues();
-            txtMaNhanVien.Text = "NV" + (dgvNhanVien.Rows.Count + 1).ToString();
+            int i = 1;
+            while (true)
+            {
+                txtMaNhanVien.Text = "NV" + i.ToString();
+                i++;
+                bool flag = false;
+                foreach(NhanVien nv in dsNV)
+                {
+                    if (txtMaNhanVien.Text.Trim() == nv.MaNhanVien.Trim())
+                    {
+                        flag = true;
+                    }
+                }
+                if (flag == false)
+                    break;
+            }
+            
             txtMaNhanVien.Enabled = false;
             txtTenNhanVien.Focus();
 
@@ -192,6 +210,7 @@ namespace QL_BanHang_AdoDotNet.GUI
             {
                 HienThiDanhSachNhanVien();
                 MessageBox.Show("Thêm nhân viên thành công");
+                btnBoQua_Click(null, null);
                 
             }
             else if(res==0)

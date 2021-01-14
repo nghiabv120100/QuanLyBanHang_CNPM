@@ -104,7 +104,22 @@ namespace QL_BanHang_AdoDotNet.GUI
             cmbMaLoaiHang.SelectedIndex = -1;
             picAnh.Image = null;
             txtPath.Text = "";
-            txtMaHang.Text = "MH" + (dgvHangHoa.Rows.Count + 1).ToString();
+            int i = 1;
+            while (true)
+            {
+                txtMaHang.Text = "HH" + i.ToString();
+                i++;
+                bool flag = false;
+                foreach (HangHoa hh in dsHH)
+                {
+                    if (txtMaHang.Text.Trim() == hh.MaHang.Trim())
+                    {
+                        flag = true;
+                    }
+                }
+                if (flag == false)
+                    break;
+            }
             txtMaHang.Enabled = false;
             txtTenHang.Focus();
         }
@@ -138,11 +153,11 @@ namespace QL_BanHang_AdoDotNet.GUI
             HH.LoaiHang = cmbMaLoaiHang.SelectedValue.ToString();
             HH.MaNCC= int.Parse(cmbNhaCungCap.SelectedValue.ToString()) ;
 
-            MessageBox.Show(cmbMaLoaiHang.SelectedValue.ToString());
             int res = BLL_HangHoa.InsertHangHoa(HH);
             if (res > 0)
             {
                 MessageBox.Show("Thêm hàng hoá thành công");
+                btnBoQua_Click(null, null);
             }    
             else if (res==0)
             {

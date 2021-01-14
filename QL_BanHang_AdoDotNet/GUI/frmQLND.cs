@@ -254,6 +254,7 @@ namespace QL_BanHang_AdoDotNet.GUI
                         HienThiDanhSachNguoiDung();
                         MessageBox.Show("Thêm tài khoản thành công");
                         ResetValues();
+                        btnBoQua_Click(null, null);
                     }
                     else
                     {
