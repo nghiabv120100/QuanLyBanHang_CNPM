@@ -308,7 +308,7 @@ namespace QL_BanHang_AdoDotNet.GUI
             }
             if (cmbNhaCungCap.SelectedValue != null)
             {
-                MessageBox.Show(cmbNhaCungCap.SelectedValue.ToString().Trim());
+                
                 HH.MaNCC = int.Parse(cmbNhaCungCap.SelectedValue.ToString().Trim());
             }
             else

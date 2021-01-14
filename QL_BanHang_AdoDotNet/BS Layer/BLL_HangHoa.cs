@@ -40,6 +40,8 @@ namespace QL_BanHang_AdoDotNet.BS_Layer
                 sql += " AND TenHang LIKE N'%" + HH.TenHang.Trim() + "%'";
             if (HH.LoaiHang != "")
                 sql += " AND LoaiHang LIKE '%" + HH.LoaiHang.Trim() + "%'";
+            if (HH.MaNCC != -1)
+                sql += " AND HangHoa.MaNCC=" +HH.MaNCC;
             return Query_DAL.GetDataToTable(sql);
         }
         public static int InsertHangHoa(HangHoa HH)
